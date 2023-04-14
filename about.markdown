@@ -4,15 +4,14 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+My name is Jaedyn Okabe and I am a second year at Queen's university pursuing a Bachelors of Computing with a focus in security.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I am very interested in the cybersecurity field and hoping to be able to get work experience in the field during a internship or co-op.  
 
+You can find me consistently participating in CTFs for the team throughout the year while I prepare to take my eJPTv2 exam. I am also consistently practicing on TryHackMe, RingZer0, and OverTheWire. 
 
-[jekyll-organization]: https://github.com/jekyll
+On CTFTime I mainly participate for the team [Inodes](https://ctftime.org/team/214260) or you can see my personal stats here [jae03](https://ctftime.org/user/154304). 
+
+If you would like to reach out, add me on discord jae03#8078 or email me @ jaedyn.okabe@gmail.com
+
