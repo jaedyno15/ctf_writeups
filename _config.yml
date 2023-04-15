@@ -29,11 +29,16 @@ baseurl: "ctf_writeups" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: jaedyno15
 linkedin_username: jaedyn-okabe
-tryHackMe_username: jay4221
+tryhackme_username: jay4221
 ctftime_username: jae03
 
 # Build settings
 theme: minima
+  social_links:
+    - { platform: github, user_url: "https://github.com/jaedyno15" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/jaedyn-okabe"}
+    - { platform: tryhackme, user_url: "https://tryhackme.com/p/jay4221"}
+    - { platform: ctftime, user_url: "https://ctftime.org/user/154304"}
 plugins:
   - jekyll-feed
 
