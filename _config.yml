@@ -33,7 +33,7 @@ tryhackme_username: jay4221
 ctftime_username: jae03
 
 # Build settings
-theme: slate
+theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
 
