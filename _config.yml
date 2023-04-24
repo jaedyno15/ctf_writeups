@@ -13,6 +13,14 @@
 
 title: Jaedyn Okabe
 email: jaedyn.okabe@gmail.com
+
+
+# info for footer
+author: 
+  name: Jaedyn Okabe
+  email: jaedyn.okabe@gmail.com
+
+
 description: >- # this means to ignore newlines until "baseurl:"
   Hi I'm a undergrad student at Queen's University pursuing a degree in Computing
   with a focus in security. This site holds writeups, my resume, CTF stats, and what I 
@@ -20,13 +28,16 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+
 github_username: jaedyno15
 linkedin_username: jaedyn-okabe
-tryhackme_username: jay4221
+tryhackme_username: jae03
 ctftime_username: jae03
 
 # Build settings
 theme: minima
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag #add metadata tags to help search engines display site content
@@ -34,6 +45,7 @@ plugins:
 
 # not being registered at all
 minima:
+  skin: dark
   social_links:
     - { platform: github, user_url: "https://github.com/jaedyno15" }
     - { platform: linkedin, user_url: "https://www.linkedin.com/in/jaedyn-okabe"}
@@ -42,8 +54,10 @@ minima:
 
 
 # uncomment and add if I want more pages in header (add resume link or something)
-# header_pages:
-#   - about.md
+header_pages:
+  - about.markdown
+  - resume.markdown
+# may not be right? 
 
 # Exclude from processing.
 # The following items will not be processed, by default.
