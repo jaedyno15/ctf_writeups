@@ -23,7 +23,7 @@ Tags: picoCTF 2023, Web Exploitation, XXE
 
 Running the instance we are brought to a page that just displays some basic information and not much else going on. However, the one tag 'XXE' is a big hint that we're going to have an XML external entity injection (XXE is its shorthand name). 
 
-![soap_home](assets/images/soap_home.png)
+![soap_home](/assets/images/soap_home.png)
 
 Pretty much this just means that we can alter the XML data of the web application and interact with the backend. 
 
