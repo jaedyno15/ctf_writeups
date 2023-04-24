@@ -26,7 +26,7 @@ tryhackme_username: jay4221
 ctftime_username: jae03
 
 # Build settings
-theme: minima
+theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
   - jekyll-seo-tag #add metadata tags to help search engines display site content
