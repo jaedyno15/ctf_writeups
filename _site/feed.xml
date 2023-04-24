@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T09:56:53-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jaedyn Okabe</title><subtitle>Hi I&apos;m a undergrad student at Queen&apos;s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I  am currently working on in cybersecurity.</subtitle><entry><title type="html">A New Hope - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes.html" rel="alternate" type="text/html" title="A New Hope - Space Heroes CTF" /><published>2023-04-23T20:56:54-04:00</published><updated>2023-04-23T20:56:54-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes.html">&lt;p&gt;Category: Forensics&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T13:29:13-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jaedyn Okabe</title><subtitle>Hi I&apos;m a undergrad student at Queen&apos;s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I  am currently working on in cybersecurity.</subtitle><entry><title type="html">A New Hope - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes.html" rel="alternate" type="text/html" title="A New Hope - Space Heroes CTF" /><published>2023-04-23T20:56:54-04:00</published><updated>2023-04-23T20:56:54-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes.html">&lt;p&gt;Category: Forensics&lt;/p&gt;
 
 &lt;p&gt;Points: 184&lt;/p&gt;
 
@@ -6,17 +6,17 @@
 
 &lt;p&gt;We get a ppt file to download which contains a single slide that looks like this.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/new_hope_init.png&quot; alt=&quot;initial_ppt&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/new_hope_init.png&quot; alt=&quot;initial_ppt&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;An easy way to see if there is anything hidden is just to start moving stuff around on the editor. For this challenge it does help, we can see that behind the two images there is a third one but it doesn’t load. So next step is to try and get that image file.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/new_hope_found_image.png&quot; alt=&quot;found_image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/new_hope_found_image.png&quot; alt=&quot;found_image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;ppt files are actually just zip files so we can extract the data and we’re left with three directories: _rels, docProps, and ppt. Heading into ppt then media we see the three images.&lt;/p&gt;
 
 &lt;p&gt;If we try to open image1.png we get an error so the file must be corrupt. There is a website for pretty much everything, so I pull up a png repairer site (i used &lt;a href=&quot;https://online.officerecovery.com/&quot;&gt;officerecovery&lt;/a&gt; but there are lots of others). It returned the file and now it opens and we can see the flag (this site leaves a watermark which could have blocked the flag so I’m just lucky it didn’t).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/new_hope_solve.png&quot; alt=&quot;png_solve&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/new_hope_solve.png&quot; alt=&quot;png_solve&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The flag is &lt;strong&gt;shctf{help_m3_ob1_y0u’re_my_0n1y_hope}&lt;/strong&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Space" /><category term="Heroes" /><summary type="html">Category: Forensics</summary></entry><entry><title type="html">Galactic Federation - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes.html" rel="alternate" type="text/html" title="Galactic Federation - Space Heroes CTF" /><published>2023-04-23T18:10:18-04:00</published><updated>2023-04-23T18:10:18-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes.html">&lt;p&gt;Category: RE&lt;/p&gt;
 
@@ -129,17 +129,17 @@ Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
 
 &lt;p&gt;We have a txt file which appears to be empty. However, if you try and highlight the file contents you see that there are a bunch of whitespaces.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/whitespace.png&quot; alt=&quot;whitespaces&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/whitespace.png&quot; alt=&quot;whitespaces&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I just competed in a previous CTF that also had a challenge about this so I knew that the &lt;a href=&quot;https://en.wikipedia.org/wiki/Whitespace_(programming_language)&quot;&gt;whitespace programming language&lt;/a&gt; consists of tabs, spaces, and linefeeds. I tried putting it into &lt;a href=&quot;https://naokikp.github.io/wsi/whitespace.html&quot;&gt;naokikp’s decoder&lt;/a&gt; because it has the option to make my input ‘visible’ (translates the spaces,tabs, and linefeeds to chars) but it wasn’t giving me any results in terms of converting to binary. So, I decided to do the conversion myself.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/whitespace_unconverted.png&quot; alt=&quot;decoder&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/whitespace_unconverted.png&quot; alt=&quot;decoder&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I put them into vs code, converting all the S’s into 0s, the T’s to 1s, and the L’s to spaces using the find-replace-all function. This gives a nice series of binary values which can be converted to ascii.&lt;/p&gt;
 
 &lt;p&gt;Heading over to &lt;a href=&quot;https://gchq.github.io/CyberChef/&quot;&gt;cyberchef&lt;/a&gt;, we can input the binary and convert it to ascii using the &lt;em&gt;‘from binary’&lt;/em&gt; option.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/cyberchef_bynary.png&quot; alt=&quot;cyberchef_bynary&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/cyberchef_bynary.png&quot; alt=&quot;cyberchef_bynary&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This gives us the flag: &lt;strong&gt;shctf{a_bl1nd_m4n_t3aching_an_4ndr0id_h0w_to_pa1nt}&lt;/strong&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Space" /><category term="Heroes" /><summary type="html">Category: crypto</summary></entry><entry><title type="html">Sanity Check In Space - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html" rel="alternate" type="text/html" title="Sanity Check In Space - Space Heroes CTF" /><published>2023-04-22T21:22:34-04:00</published><updated>2023-04-22T21:22:34-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html">&lt;style&gt;
     img{
@@ -157,11 +157,11 @@ Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
 &lt;hr /&gt;
 
 &lt;p&gt;Loading up the website we see an image of a robot so that hints at needing to check the robots.txt file. So adding it the url takes you there and we see that the disallowed site is &lt;strong&gt;/humans.txt&lt;/strong&gt;.
-&lt;img src=&quot;/assets/images/robot.jpeg&quot; width=&quot;30%&quot; height=&quot;30%&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/ctf_writeups/assets/images/robot.jpeg&quot; width=&quot;30%&quot; height=&quot;30%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once we head to that page, we see an image of an astronaut holding a cookie and saying “You look pretty human, but we have to be sure. Go eat something and come back here”. Again the image is a clue and we know to look at the cookies of the site.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/cookie.jpg&quot; alt=&quot;cookie&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/cookie.jpg&quot; alt=&quot;cookie&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I use burpsuite for all of this because I find it easier but you can modify the cookie from the inspect features directly in your browser. We see one cookie which is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;human=false&lt;/code&gt;. Changing that value to true and sending it will show the message &lt;em&gt;“Wow, you really are human, celebrate with us by visiting arrakis”&lt;/em&gt;.&lt;/p&gt;
 
@@ -182,7 +182,7 @@ Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
 
 &lt;p&gt;When we open it up we see a series of DNS packets that all contain data. Since we’re intercepting communications from the enemy I assume the data I can see is part of the message. So following the first stream (stream0) I can see that the data is in the format (encrypted data).(repeated encrypted data for multiple packets).summit.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/escape_matrix_stream_1.png&quot; alt=&quot;stream1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/escape_matrix_stream_1.png&quot; alt=&quot;stream1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I’m pretty sure that first set of encrypted data is what we’re looking for so just for testing on a small stream first I export this stream from wireshark. Then isolating just the unique parts inside VS code (I’m sure there is a more efficient way to do this with tshark but that’s fine) gives:&lt;/p&gt;
 
@@ -220,7 +220,7 @@ bWVzfQ==
 
 &lt;p&gt;Running the instance we are brought to a page that just displays some basic information and not much else going on. However, the one tag ‘XXE’ is a big hint that we’re going to have an XML external entity injection (XXE is its shorthand name).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/soap_home.png&quot; alt=&quot;soap_home&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/soap_home.png&quot; alt=&quot;soap_home&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Pretty much this just means that we can alter the XML data of the web application and interact with the backend.&lt;/p&gt;
 
@@ -247,12 +247,14 @@ bWVzfQ==
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Here’s the page we want to alter and inject the XML code into. The current contents of the file aren’t really important to us. Using burpsuite’s proxy to intercept the traffic, clicking one of the buttons will send you this js file which can be modified. So we can add a very basic XML injection &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;!DOCTYPE foo[ &amp;lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot;&amp;gt;]&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here’s the page we want to alter and inject the XML code into. The current contents of the file aren’t really important to us. Using burpsuite’s proxy to intercept the traffic, clicking one of the buttons will send you this XML code which can be modified. So we can add a very basic XML injection &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;!DOCTYPE foo[ &amp;lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot;&amp;gt;]&amp;gt;&lt;/code&gt; within the code.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/soap_exploit.png&quot; alt=&quot;soap_exploit&quot; /&gt;&lt;/p&gt;
+&lt;!-- in github we need /ctf_writeups/assets/images/soap_exploit.png --&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/soap_exploit.png&quot; alt=&quot;soap_exploit&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To break this down, we create a doctype foo entity called xxe which is accessing the file at the given path. The file pathing is what the challenge description told us to try and access and we are adding an entity xxe which can be named to anything you want (it is just the name of the new entity).&lt;/p&gt;
 
 &lt;p&gt;Now we can forward the traffic with this modification making sure that you have intercept traffic response on (action -&amp;gt; intercept -&amp;gt; show response?) and the response gives us a bunch of information including the flag: &lt;strong&gt;picoCTF{XML_3xtern@l_3nt1t1ty_0dcf926e}&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/soap_flag.png&quot; alt=&quot;soap_flag&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Pico" /><summary type="html">Category: Web Exploitation</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/soap_flag.png&quot; alt=&quot;soap_flag&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Pico" /><summary type="html">Category: Web Exploitation</summary></entry></feed>

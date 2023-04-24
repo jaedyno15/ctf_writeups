@@ -20,12 +20,12 @@ Points: 100
 ---
 
 Loading up the website we see an image of a robot so that hints at needing to check the robots.txt file. So adding it the url takes you there and we see that the disallowed site is **/humans.txt**.
-<img src="/assets/images/robot.jpeg"  width="30%" height="30%">
+<img src="/ctf_writeups/assets/images/robot.jpeg"  width="30%" height="30%">
 
 Once we head to that page, we see an image of an astronaut holding a cookie and saying "You look pretty human, but we have to be sure. Go eat something and come back here". Again the image is a clue and we know to look at the cookies of the site. 
 
 
-![cookie](/assets/images/cookie.jpg)
+![cookie](/ctf_writeups/assets/images/cookie.jpg)
 
 I use burpsuite for all of this because I find it easier but you can modify the cookie from the inspect features directly in your browser. We see one cookie which is ``` human=false ```. Changing that value to true and sending it will show the message *"Wow, you really are human, celebrate with us by visiting arrakis"*. 
 

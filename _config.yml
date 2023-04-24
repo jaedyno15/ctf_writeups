@@ -26,6 +26,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   with a focus in security. This site holds writeups, my resume, CTF stats, and what I 
   am currently working on in cybersecurity.
 
+
+# to actually run on github pages the baseurl needs to be "/ctf_writeups" but running local requires an empty baseurl: ""
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -49,7 +51,7 @@ minima:
   social_links:
     - { platform: github, user_url: "https://github.com/jaedyno15" }
     - { platform: linkedin, user_url: "https://www.linkedin.com/in/jaedyn-okabe"}
-    - { platform: tryhackme, user_url: "https://tryhackme.com/p/jay4221"}
+    - { platform: tryhackme, user_url: "https://tryhackme.com/p/jae03"}
     - { platform: ctftime, user_url: "https://ctftime.org/user/154304"}
 
 

@@ -61,7 +61,7 @@
 
 <p>Running the instance we are brought to a page that just displays some basic information and not much else going on. However, the one tag ‘XXE’ is a big hint that we’re going to have an XML external entity injection (XXE is its shorthand name).</p>
 
-<p><img src="/assets/images/soap_home.png" alt="soap_home" /></p>
+<p><img src="/ctf_writeups/assets/images/soap_home.png" alt="soap_home" /></p>
 
 <p>Pretty much this just means that we can alter the XML data of the web application and interact with the backend.</p>
 
@@ -88,15 +88,17 @@
     <span class="k">return</span> <span class="nx">xml</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here’s the page we want to alter and inject the XML code into. The current contents of the file aren’t really important to us. Using burpsuite’s proxy to intercept the traffic, clicking one of the buttons will send you this js file which can be modified. So we can add a very basic XML injection <code class="language-plaintext highlighter-rouge">&lt;!DOCTYPE foo[ &lt;!ENTITY xxe SYSTEM "file:///etc/passwd"&gt;]&gt;</code>.</p>
+<p>Here’s the page we want to alter and inject the XML code into. The current contents of the file aren’t really important to us. Using burpsuite’s proxy to intercept the traffic, clicking one of the buttons will send you this XML code which can be modified. So we can add a very basic XML injection <code class="language-plaintext highlighter-rouge">&lt;!DOCTYPE foo[ &lt;!ENTITY xxe SYSTEM "file:///etc/passwd"&gt;]&gt;</code> within the code.</p>
 
-<p><img src="/assets/images/soap_exploit.png" alt="soap_exploit" /></p>
+<!-- in github we need /ctf_writeups/assets/images/soap_exploit.png -->
+
+<p><img src="/ctf_writeups/assets/images/soap_exploit.png" alt="soap_exploit" /></p>
 
 <p>To break this down, we create a doctype foo entity called xxe which is accessing the file at the given path. The file pathing is what the challenge description told us to try and access and we are adding an entity xxe which can be named to anything you want (it is just the name of the new entity).</p>
 
 <p>Now we can forward the traffic with this modification making sure that you have intercept traffic response on (action -&gt; intercept -&gt; show response?) and the response gives us a bunch of information including the flag: <strong>picoCTF{XML_3xtern@l_3nt1t1ty_0dcf926e}</strong>.</p>
 
-<p><img src="/assets/images/soap_flag.png" alt="soap_flag" /></p>
+<p><img src="/ctf_writeups/assets/images/soap_flag.png" alt="soap_flag" /></p>
 
   </div><a class="u-url" href="/pico/2023/03/18/SOAP-Pico.html" hidden></a>
 </article>

@@ -22,7 +22,7 @@ Pcap file:
 
 When we open it up we see a series of DNS packets that all contain data. Since we're intercepting communications from the enemy I assume the data I can see is part of the message. So following the first stream (stream0) I can see that the data is in the format (encrypted data).(repeated encrypted data for multiple packets).summit.
 
-![stream1](/assets/images/escape_matrix_stream_1.png)
+![stream1](/ctf_writeups/assets/images/escape_matrix_stream_1.png)
 
 I'm pretty sure that first set of encrypted data is what we're looking for so just for testing on a small stream first I export this stream from wireshark. Then isolating just the unique parts inside VS code (I'm sure there is a more efficient way to do this with tshark but that's fine) gives:
 
