@@ -1,10 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
@@ -25,7 +18,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   with a focus in security. This site holds writeups, my resume, CTF stats, and what I 
   am currently working on in cybersecurity.
 
-baseurl: "ctf_writeups" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: jaedyno15
 linkedin_username: jaedyn-okabe
@@ -36,6 +29,21 @@ ctftime_username: jae03
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag #add metadata tags to help search engines display site content
+
+
+# not being registered at all
+minima:
+  social_links:
+    - { platform: github, user_url: "https://github.com/jaedyno15" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/jaedyn-okabe"}
+    - { platform: tryhackme, user_url: "https://tryhackme.com/p/jay4221"}
+    - { platform: ctftime, user_url: "https://ctftime.org/user/154304"}
+
+
+# uncomment and add if I want more pages in header (add resume link or something)
+# header_pages:
+#   - about.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.

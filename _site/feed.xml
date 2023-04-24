@@ -1,17 +1,258 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ctf_writeups/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ctf_writeups/" rel="alternate" type="text/html" /><updated>2023-04-16T20:23:52-04:00</updated><id>http://localhost:4000/ctf_writeups/feed.xml</id><title type="html">Jaedyn Okabe</title><subtitle>Hi I&apos;m a undergrad student at Queen&apos;s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I  am currently working on in cybersecurity.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/ctf_writeups/jekyll/update/2023/04/09/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2023-04-09T13:11:18-04:00</published><updated>2023-04-09T13:11:18-04:00</updated><id>http://localhost:4000/ctf_writeups/jekyll/update/2023/04/09/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/ctf_writeups/jekyll/update/2023/04/09/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T01:04:59-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jaedyn Okabe</title><subtitle>Hi I&apos;m a undergrad student at Queen&apos;s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I  am currently working on in cybersecurity.</subtitle><entry><title type="html">A New Hope - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes.html" rel="alternate" type="text/html" title="A New Hope - Space Heroes CTF" /><published>2023-04-23T20:56:54-04:00</published><updated>2023-04-23T20:56:54-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes.html">&lt;p&gt;Category: Forensics&lt;/p&gt;
 
-<p>Jekyll requires blog post files to be named according to the following format:</p>
+&lt;p&gt;Points: 184&lt;/p&gt;
 
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+&lt;hr /&gt;
 
-<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+&lt;p&gt;We get a ppt file to download which contains a single slide that looks like this.&lt;/p&gt;
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+&lt;p&gt;&lt;img src=&quot;/assets/images/new_hope_init.png&quot; alt=&quot;initial_ppt&quot; /&gt;&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+&lt;p&gt;An easy way to see if there is anything hidden is just to start moving stuff around on the editor. For this challenge it does help, we can see that behind the two images there is a third one but it doesn’t load. So next step is to try and get that image file.&lt;/p&gt;
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/assets/images/new_hope_found_image.png&quot; alt=&quot;found_image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ppt files are actually just zip files so we can extract the data and we’re left with three directories: _rels, docProps, and ppt. Heading into ppt then media we see the three images.&lt;/p&gt;
+
+&lt;p&gt;If we try to open image1.png we get an error so the file must be corrupt. There is a website for pretty much everything, so I pull up a png repairer site (i used &lt;a href=&quot;https://online.officerecovery.com/&quot;&gt;officerecovery&lt;/a&gt; but there are lots of others). It returned the file and now it opens and we can see the flag (this site leaves a watermark which could have blocked the flag so I’m just lucky it didn’t).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/new_hope_solve.png&quot; alt=&quot;png_solve&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The flag is &lt;strong&gt;shctf{help_m3_ob1_y0u’re_my_0n1y_hope}&lt;/strong&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Space" /><category term="Heroes" /><summary type="html">Category: Forensics</summary></entry><entry><title type="html">Galactic Federation - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes.html" rel="alternate" type="text/html" title="Galactic Federation - Space Heroes CTF" /><published>2023-04-23T18:10:18-04:00</published><updated>2023-04-23T18:10:18-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes.html">&lt;p&gt;Category: RE&lt;/p&gt;
+
+&lt;p&gt;Points: 221&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;We’re given a bin file that brings us to a login page when we try running it. Pulling up Ghidra to decompile the file we can see what the login error checking is.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;    &lt;span class=&quot;n&quot;&gt;bVar1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;obfuscate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local_78&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;bVar2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local_78&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hktpu&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bVar2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;obfuscate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local_58&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;bVar1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;bVar2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local_58&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;8fs7}:f~Y;unS:yfqL;uZ&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bVar2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;goto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LAB_00403dc9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;bVar2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;LAB_00403dc9:&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;bVar2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;We see in the login_page function that it compares the user (var local_78) to &lt;strong&gt;‘hktpu’&lt;/strong&gt; and the password (local_58) to &lt;strong&gt;‘8fs7}:f~Y;unS:yfqL;uZ’&lt;/strong&gt;. We can also see here that the inputs are going through a function called &lt;em&gt;obfuscate()&lt;/em&gt; which is altering them.&lt;/p&gt;
+
+&lt;p&gt;So using ghidra to open that function we can see that each character gets the char &lt;em&gt;‘\a’&lt;/em&gt; added to it.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;n&quot;&gt;basic_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;obfuscate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basic_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param_1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pcVar1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;ulong&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uVar2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;ulong&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in_RSI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;local_1c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  
+  &lt;span class=&quot;n&quot;&gt;local_1c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;uVar2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__cxx11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basic_string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char_traits&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;allocator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uVar2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ulong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local_1c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pcVar1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__cxx11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basic_string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char_traits&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;allocator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;::&lt;/span&gt;
+                     &lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;in_RSI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pcVar1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pcVar1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&apos;\a&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// this is the line we care about &lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;local_1c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;local_1c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__cxx11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basic_string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char_traits&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;allocator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basic_string&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param_1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param_1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;All we need to do is write a quick script to subtract this value from each of the chars (or do it manually by converting the ascii values to integers first).&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// all written in c++&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;deobfuscate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reserve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&apos;\a&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obfuscated_user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hktpu&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obfuscated_password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;8fs7}:f~Y;unS:yfqL;uZ&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deobfuscated_user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deobfuscate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obfuscated_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deobfuscated_password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deobfuscate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obfuscated_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Deobfuscated user: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deobfuscated_user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Deobfuscated password: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deobfuscated_password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Deobfuscated user: admin
+Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that we’re in, we’re given lots of options and each of those options have even more choices. So instead of blindly trying to find something we can go back to ghidra and look for a function that prints the flag. From there we can usually work backwards and get the desired output.&lt;/p&gt;
+
+&lt;p&gt;We see a &lt;em&gt;print_flag&lt;/em&gt; function so now we can find all references to that function (rick-clicking and selecting ‘show references to’). Following the first reference we see the &lt;em&gt;‘collapse_economy’&lt;/em&gt; function. Following that function too we finally see the one we need to interact with, which is &lt;em&gt;‘adjust_economy’&lt;/em&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currency&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bVar1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basic_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;galactic_currency&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;abi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cxx11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;usd&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bVar1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bVar1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bVar1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bVar1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;collapse_economy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Within the &lt;em&gt;‘adjust_economy’&lt;/em&gt; function, &lt;em&gt;‘collapse_economy’&lt;/em&gt; will be called if currency == 0 and the galactic_currency == ‘usd’.&lt;/p&gt;
+
+&lt;p&gt;So starting with the easy one we can change galactic currency to usd. Either keep using ghidra to find the right function or just play around with the program until you find the &lt;em&gt;presidential_decree&lt;/em&gt; function and from there we can use the &lt;em&gt;change_galactic_currency&lt;/em&gt; option which takes any string input and set it to usd.&lt;/p&gt;
+
+&lt;p&gt;Then we can use head back to the &lt;em&gt;‘adjust_economy’&lt;/em&gt; function and use &lt;em&gt;inflate_currency&lt;/em&gt; which takes an integer as a percentage to change the currency value. Before we try adding any values though we can check what our input will do. We see&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt; &lt;span class=&quot;n&quot;&gt;currency&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currency&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currency&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;where var is the percentage we input (var is not the original variable name, ghidra lets you rename variables which is what I have done to make reading the code easier). Given this info, we can input &lt;strong&gt;-100&lt;/strong&gt; or any value you want that will cause the currency to drop to 0 or below.&lt;/p&gt;
+
+&lt;p&gt;As soon as both changes are made, a series of text dialogues print out along with the flag: &lt;strong&gt;shctf{w4it_uH_wh0s_P4y1Ng_m3&lt;em&gt;2_y3L1&lt;/em&gt;@_tH15_gUy?}&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="space" /><category term="heroes" /><summary type="html">Category: RE</summary></entry><entry><title type="html">Bynary Encoding - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/22/Bynary-Encoding-SpaceHeroes.html" rel="alternate" type="text/html" title="Bynary Encoding - Space Heroes CTF" /><published>2023-04-22T21:51:30-04:00</published><updated>2023-04-22T21:51:30-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/22/Bynary-Encoding-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/22/Bynary-Encoding-SpaceHeroes.html">&lt;p&gt;Category: crypto&lt;/p&gt;
+
+&lt;p&gt;Points: 148&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;We have a txt file which appears to be empty. However, if you try and highlight the file contents you see that there are a bunch of whitespaces.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/whitespace.png&quot; alt=&quot;whitespaces&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I just competed in a previous CTF that also had a challenge about this so I knew that the &lt;a href=&quot;https://en.wikipedia.org/wiki/Whitespace_(programming_language)&quot;&gt;whitespace programming language&lt;/a&gt; consists of tabs, spaces, and linefeeds. I tried putting it into &lt;a href=&quot;https://naokikp.github.io/wsi/whitespace.html&quot;&gt;naokikp’s decoder&lt;/a&gt; because it has the option to make my input ‘visible’ (translates the spaces,tabs, and linefeeds to chars) but it wasn’t giving me any results in terms of converting to binary. So, I decided to do the conversion myself.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/whitespace_unconverted.png&quot; alt=&quot;decoder&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I put them into vs code, converting all the S’s into 0s, the T’s to 1s, and the L’s to spaces using the find-replace-all function. This gives a nice series of binary values which can be converted to ascii.&lt;/p&gt;
+
+&lt;p&gt;Heading over to &lt;a href=&quot;https://gchq.github.io/CyberChef/&quot;&gt;cyberchef&lt;/a&gt;, we can input the binary and convert it to ascii using the &lt;em&gt;‘from binary’&lt;/em&gt; option.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/cyberchef_bynary.png&quot; alt=&quot;cyberchef_bynary&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This gives us the flag: &lt;strong&gt;shctf{a_bl1nd_m4n_t3aching_an_4ndr0id_h0w_to_pa1nt}&lt;/strong&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Space" /><category term="Heroes" /><summary type="html">Category: crypto</summary></entry><entry><title type="html">Sanity Check In Space - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html" rel="alternate" type="text/html" title="Sanity Check In Space - Space Heroes CTF" /><published>2023-04-22T21:22:34-04:00</published><updated>2023-04-22T21:22:34-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html">&lt;style&gt;
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+&lt;/style&gt;
+
+&lt;p&gt;Category: web&lt;/p&gt;
+
+&lt;p&gt;Points: 100&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Loading up the website we see an image of a robot so that hints at needing to check the robots.txt file. So adding it the url takes you there and we see that the disallowed site is &lt;strong&gt;/humans.txt&lt;/strong&gt;.
+&lt;img src=&quot;/assets/images/robot.jpeg&quot; width=&quot;30%&quot; height=&quot;30%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once we head to that page, we see an image of an astronaut holding a cookie and saying “You look pretty human, but we have to be sure. Go eat something and come back here”. Again the image is a clue and we know to look at the cookies of the site.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/cookie.jpg&quot; alt=&quot;cookie&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I use burpsuite for all of this because I find it easier but you can modify the cookie from the inspect features directly in your browser. We see one cookie which is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;human=false&lt;/code&gt;. Changing that value to true and sending it will show the message &lt;em&gt;“Wow, you really are human, celebrate with us by visiting arrakis”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Taking a guess we can move to the &lt;strong&gt;/arrakis&lt;/strong&gt; page. There we see that a password is required but since I push all my requests and responses through burpsuite I saw that there’s a comment on the page saying &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;!-- The password is &quot;FearIsTheMindKiller&quot; --&amp;gt;&lt;/code&gt; (again this can be done through the inspect tool of the browser). Putting that in, a new message appears: &lt;em&gt;“Excellent job, one ultimate challenge awaits you, on krypton”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Assuming that this is just another page to head to, we go to &lt;strong&gt;/krypton&lt;/strong&gt; where we find a user input box and the message &lt;em&gt;“This tool pings websites, but in space”&lt;/em&gt;. Because it takes an input from us and the input is expected to be a bash command, I know it’s probably a command injection. This means we can enter different bash commands and they should execute on the server’s OS. My default check is to enter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id||ls;&lt;/code&gt; which causes the second command (ls) to execute. Doing so we see that flag.txt exists. Now all we need to do is read that file and we should be set. Inputting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id||cat flag.txt;&lt;/code&gt; gives us the flag: &lt;strong&gt;shctf{exp01ting_w3bs1tes_1N_SP@C3}&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="Space" /><category term="Heroes" /><summary type="html"></summary></entry><entry><title type="html">Escape The Matrix - Summit CTF</title><link href="http://localhost:4000/summit/2023/04/16/Escape-The-Matrix-Summit.html" rel="alternate" type="text/html" title="Escape The Matrix - Summit CTF" /><published>2023-04-16T01:22:34-04:00</published><updated>2023-04-16T01:22:34-04:00</updated><id>http://localhost:4000/summit/2023/04/16/Escape-The-Matrix-Summit</id><content type="html" xml:base="http://localhost:4000/summit/2023/04/16/Escape-The-Matrix-Summit.html">&lt;p&gt;Category: Forensics&lt;/p&gt;
+
+&lt;p&gt;Points: 150&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Description &lt;/h1&gt;
+&lt;p&gt;We see some bad bits escaping our grasp. Their trying to climb away with intel! Go find out what they are doing…&lt;/p&gt;
+
+&lt;p&gt;Pcap file:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;When we open it up we see a series of DNS packets that all contain data. Since we’re intercepting communications from the enemy I assume the data I can see is part of the message. So following the first stream (stream0) I can see that the data is in the format (encrypted data).(repeated encrypted data for multiple packets).summit.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/escape_matrix_stream_1.png&quot; alt=&quot;stream1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m pretty sure that first set of encrypted data is what we’re looking for so just for testing on a small stream first I export this stream from wireshark. Then isolating just the unique parts inside VS code (I’m sure there is a more efficient way to do this with tshark but that’s fine) gives:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VGhlIGZsYWcg
+eW91IGhhdmUg
+YmVlbiB3YWl0
+aW5nIGZvciBp
+cyAuLi4gUGF1
+c2luZyBmb3Ig
+ZHJhbWF0aWMg
+ZWZmZWN0IC4u
+LiA6IFN1bW1p
+dENURntTdXNf
+RDBtYTFuX240
+bWVzfQ==
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So now I’m left with what looks like a base64 encryption (if you’re not familiar with encryptions, using &lt;a href=&quot;https://www.dcode.fr/cipher-identifier&quot;&gt;dcode&lt;/a&gt; to identify the cipher/encryption is really helpful). Heading over to &lt;a href=&quot;https://gchq.github.io/CyberChef/&quot;&gt;cyberchef&lt;/a&gt; and decoding from base64 we get &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;The flag you have been waiting for is ... Pausing for dramatic effect ... : SummitCTF{Sus_D0ma1n_n4mes}&lt;/code&gt;. So we did not end up needing any of the other packet streams.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;!-- make footer? --&gt;
+&lt;p&gt;Note: Out of curiosity I repeated this process with a different stream and it just returned jibberish so I guess I was lucky that I tried the correct stream first. I also determined that the second set of base64 data that was repeating (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tscc1QuycZN4&lt;/code&gt;) just indicated what stream it was apart of. Decoding it did not result in readable data either.&lt;/p&gt;</content><author><name></name></author><category term="summit" /><summary type="html">Category: Forensics</summary></entry><entry><title type="html">SOAP - PICO CTF</title><link href="http://localhost:4000/pico/2023/03/18/SOAP-Pico.html" rel="alternate" type="text/html" title="SOAP - PICO CTF" /><published>2023-03-18T20:56:54-04:00</published><updated>2023-03-18T20:56:54-04:00</updated><id>http://localhost:4000/pico/2023/03/18/SOAP-Pico</id><content type="html" xml:base="http://localhost:4000/pico/2023/03/18/SOAP-Pico.html">&lt;p&gt;Category: Web Exploitation&lt;/p&gt;
+
+&lt;p&gt;Points: 100&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Description &lt;/h1&gt;
+
+&lt;p&gt;The web project was rushed and no security assessment was done. Can you read the /etc/passwd file?&lt;/p&gt;
+
+&lt;p&gt;Tags: picoCTF 2023, Web Exploitation, XXE&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Running the instance we are brought to a page that just displays some basic information and not much else going on. However, the one tag ‘XXE’ is a big hint that we’re going to have an XML external entity injection (XXE is its shorthand name).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/soap_home.png&quot; alt=&quot;soap_home&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pretty much this just means that we can alter the XML data of the web application and interact with the backend.&lt;/p&gt;
+
+&lt;p&gt;So I’m going to pull up burpsuit so that this whole process is easier and start looking for XML code in the web page. Looking through the source code, we see a call to a script:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script src=&quot;/static/js/xmlDetailsCheckPayload.js&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This is exactly the kind of data we want. So adding that to our url we are directed to a page showing the js code.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;contentType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;application/xml&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;data&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pair&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pair&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pair&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+        &lt;span class=&quot;nx&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here’s the page we want to alter and inject the XML code into. The current contents of the file aren’t really important to us. Using burpsuite’s proxy to intercept the traffic, clicking one of the buttons will send you this js file which can be modified. So we can add a very basic XML injection &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;!DOCTYPE foo[ &amp;lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot;&amp;gt;]&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/soap_exploit.png&quot; alt=&quot;soap_exploit&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To break this down, we create a doctype foo entity called xxe which is accessing the file at the given path. The file pathing is what the challenge description told us to try and access and we are adding an entity xxe which can be named to anything you want (it is just the name of the new entity).&lt;/p&gt;
+
+&lt;p&gt;Now we can forward the traffic with this modification making sure that you have intercept traffic response on (action -&amp;gt; intercept -&amp;gt; show response?) and the response gives us a bunch of information including the flag: &lt;strong&gt;picoCTF{XML_3xtern@l_3nt1t1ty_0dcf926e}&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/soap_flag.png&quot; alt=&quot;soap_flag&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Pico" /><summary type="html">Category: Web Exploitation</summary></entry></feed>
