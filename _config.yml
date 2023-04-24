@@ -28,7 +28,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 
 # to actually run on github pages the baseurl needs to be "/ctf_writeups" but running local requires an empty baseurl: ""
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/ctf_writeups" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
