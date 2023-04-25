@@ -51,17 +51,17 @@
 
 <hr />
 
-<p>We have a txt file which appears to be empty. However, if you try and highlight the file contents you see that there are a bunch of whitespaces.</p>
+<p>We have a txt file that appears to be empty. However, if you try and highlight the file contents you see that there are a bunch of whitespaces.</p>
 
 <p><img src="/ctf_writeups/assets/images/whitespace.png" alt="whitespaces" /></p>
 
-<p>I just competed in a previous CTF that also had a challenge about this so I knew that the <a href="https://en.wikipedia.org/wiki/Whitespace_(programming_language)">whitespace programming language</a> consists of tabs, spaces, and linefeeds. I tried putting it into <a href="https://naokikp.github.io/wsi/whitespace.html">naokikp’s decoder</a> because it has the option to make my input ‘visible’ (translates the spaces,tabs, and linefeeds to chars) but it wasn’t giving me any results in terms of converting to binary. So, I decided to do the conversion myself.</p>
+<p>I just competed in a previous CTF that also had a challenge about this so I knew that the <a href="https://en.wikipedia.org/wiki/Whitespace_(programming_language)">whitespace programming language</a> consists of tabs, spaces, and linefeeds. I tried putting it into <a href="https://naokikp.github.io/wsi/whitespace.html">naokikp’s decoder</a> because it has the option to make my input ‘visible’ (translates the spaces, tabs, and linefeeds to chars) but it wasn’t giving me any results in terms of converting to binary. So, I decided to do the conversion myself.</p>
 
 <p><img src="/ctf_writeups/assets/images/whitespace_unconverted.png" alt="decoder" /></p>
 
-<p>I put them into vs code, converting all the S’s into 0s, the T’s to 1s, and the L’s to spaces using the find-replace-all function. This gives a nice series of binary values which can be converted to ascii.</p>
+<p>I put them into vs code, converting all the S’s into 0s, the T’s to 1s, and the L’s into spaces using the find-replace-all function. This gives a nice series of binary values which can be converted to ASCII.</p>
 
-<p>Heading over to <a href="https://gchq.github.io/CyberChef/">cyberchef</a>, we can input the binary and convert it to ascii using the <em>‘from binary’</em> option.</p>
+<p>Heading over to <a href="https://gchq.github.io/CyberChef/">cyberchef</a>, we can input the binary and convert it to ASCII using the ‘from binary’ option.</p>
 
 <p><img src="/ctf_writeups/assets/images/cyberchef_bynary.png" alt="cyberchef_bynary" /></p>
 

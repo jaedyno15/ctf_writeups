@@ -54,7 +54,7 @@
 <h1> Description </h1>
 <p>We see some bad bits escaping our grasp. Their trying to climb away with intel! Go find out what they are doing…</p>
 
-<p>Pcap file:</p>
+<p>Pcap file: <a href="/ctf_writeups/assets/challenges/EscapingTheMatrix.pcap">EsacpingTheMatrix.pcap</a></p>
 
 <hr />
 
@@ -62,7 +62,7 @@
 
 <p><img src="/ctf_writeups/assets/images/escape_matrix_stream_1.png" alt="stream1" /></p>
 
-<p>I’m pretty sure that first set of encrypted data is what we’re looking for so just for testing on a small stream first I export this stream from wireshark. Then isolating just the unique parts inside VS code (I’m sure there is a more efficient way to do this with tshark but that’s fine) gives:</p>
+<p>I’m pretty sure that the first set of encrypted data is what we’re looking for so just for testing on a small stream first I export this stream from Wireshark. Then isolating just the unique parts inside VS code (I’m sure there is a more efficient way to do this with tshark but that’s fine) gives:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VGhlIGZsYWcg
 eW91IGhhdmUg
@@ -81,8 +81,8 @@ bWVzfQ==
 <p>So now I’m left with what looks like a base64 encryption (if you’re not familiar with encryptions, using <a href="https://www.dcode.fr/cipher-identifier">dcode</a> to identify the cipher/encryption is really helpful). Heading over to <a href="https://gchq.github.io/CyberChef/">cyberchef</a> and decoding from base64 we get <code class="language-plaintext highlighter-rouge">The flag you have been waiting for is ... Pausing for dramatic effect ... : SummitCTF{Sus_D0ma1n_n4mes}</code>. So we did not end up needing any of the other packet streams.</p>
 
 <hr />
-<!-- make footer? -->
-<p>Note: Out of curiosity I repeated this process with a different stream and it just returned jibberish so I guess I was lucky that I tried the correct stream first. I also determined that the second set of base64 data that was repeating (<code class="language-plaintext highlighter-rouge">Tscc1QuycZN4</code>) just indicated what stream it was apart of. Decoding it did not result in readable data either.</p>
+
+<p>Note: Out of curiosity I repeated this process with a different stream and it just returned jibberish so I guess I was lucky that I tried the correct stream first. I also determined that the second set of base64 data that was repeating (<code class="language-plaintext highlighter-rouge">Tscc1QuycZN4</code>) just indicated what stream it was a part of. Decoding it did not result in readable data either.</p>
 
 
   </div><a class="u-url" href="/summit/2023/04/16/Escape-The-Matrix-Summit.html" hidden></a>

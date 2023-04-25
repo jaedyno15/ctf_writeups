@@ -94,7 +94,7 @@
   <span class="k">return</span> <span class="n">param_1</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>All we need to do is write a quick script to subtract this value from each of the chars (or do it manually by converting the ascii values to integers first).</p>
+<p>All we need to do is write a quick script to subtract this value from each of the chars (or do it manually by converting the ASCII values to integers first).</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &lt;iostream&gt;
 #include &lt;string&gt;
@@ -125,9 +125,9 @@
 Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
 </code></pre></div></div>
 
-<p>Now that we’re in, we’re given lots of options and each of those options have even more choices. So instead of blindly trying to find something we can go back to ghidra and look for a function that prints the flag. From there we can usually work backwards and get the desired output.</p>
+<p>Now that we’re in, we’re given lots of options and each of those options has even more choices. So instead of blindly trying to find something we can go back to ghidra and look for a function that prints the flag. From there we can usually work backward to get the desired output.</p>
 
-<p>We see a <em>print_flag</em> function so now we can find all references to that function (rick-clicking and selecting ‘show references to’). Following the first reference we see the <em>‘collapse_economy’</em> function. Following that function too we finally see the one we need to interact with, which is <em>‘adjust_economy’</em>.</p>
+<p>We see a ‘print_flag’ function so now we can find all references to that function (rick-clicking and selecting ‘show references to’). Following the first reference, we see the ‘collapse_economy’ function. Then following that function we finally see the one we need to interact with, which is ‘adjust_economy’.</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++">    <span class="k">if</span> <span class="p">((</span><span class="n">currency</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
         <span class="p">(</span><span class="n">bVar1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">((</span><span class="n">basic_string</span> <span class="o">*</span><span class="p">)</span><span class="n">galactic_currency</span><span class="p">[</span><span class="n">abi</span><span class="o">:</span><span class="n">cxx11</span><span class="p">],</span><span class="s">"usd"</span><span class="p">),</span> <span class="n">bVar1</span><span class="p">))</span> <span class="p">{</span>
@@ -140,11 +140,11 @@ Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
         <span class="n">collapse_economy</span><span class="p">();</span>
     <span class="p">}</span></code></pre></figure>
 
-<p>Within the <em>‘adjust_economy’</em> function, <em>‘collapse_economy’</em> will be called if currency == 0 and the galactic_currency == ‘usd’.</p>
+<p>Within the ‘adjust_economy’ function, ‘collapse_economy’ will be called if currency == 0 and the galactic_currency == ‘usd’.</p>
 
-<p>So starting with the easy one we can change galactic currency to usd. Either keep using ghidra to find the right function or just play around with the program until you find the <em>presidential_decree</em> function and from there we can use the <em>change_galactic_currency</em> option which takes any string input and set it to usd.</p>
+<p>So starting with the easy one we can change the galactic currency to usd. Either keep using ghidra to find the right function or just play around with the program until you find the ‘presidential_decree’ function and from there we can use the ‘change_galactic_currency’ option which takes any string input and set it to usd.</p>
 
-<p>Then we can use head back to the <em>‘adjust_economy’</em> function and use <em>inflate_currency</em> which takes an integer as a percentage to change the currency value. Before we try adding any values though we can check what our input will do. We see</p>
+<p>Then we can use head back to the ‘adjust_economy’ function and use ‘inflate_currency’ which takes an integer as a percentage to change the currency value. Before we try adding any values though we can check what our input will do. We see</p>
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"> <span class="n">currency</span> <span class="o">=</span> <span class="n">currency</span> <span class="o">+</span> <span class="p">(</span><span class="n">var</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="n">currency</span> </code></pre></figure>
 <p>where var is the percentage we input (var is not the original variable name, ghidra lets you rename variables which is what I have done to make reading the code easier). Given this info, we can input <strong>-100</strong> or any value you want that will cause the currency to drop to 0 or below.</p>
 

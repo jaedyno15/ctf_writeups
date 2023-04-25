@@ -19,7 +19,7 @@ Points: 100
 
 ---
 
-Loading up the website we see an image of a robot so that hints at needing to check the robots.txt file. So adding it the url takes you there and we see that the disallowed site is **/humans.txt**.
+Loading up the website we see an image of a robot which hints at needing to check the robots.txt file (file listing the urls that webscrapers like google are allowed/disallowed to display). So adding it to the url takes you there and we see that the disallowed site is **/humans.txt**.
 <img src="/ctf_writeups/assets/images/robot.jpeg"  width="30%" height="30%">
 
 Once we head to that page, we see an image of an astronaut holding a cookie and saying "You look pretty human, but we have to be sure. Go eat something and come back here". Again the image is a clue and we know to look at the cookies of the site. 
@@ -31,4 +31,4 @@ I use burpsuite for all of this because I find it easier but you can modify the 
 
 Taking a guess we can move to the **/arrakis** page. There we see that a password is required but since I push all my requests and responses through burpsuite I saw that there's a comment on the page saying ``` <!-- The password is "FearIsTheMindKiller" --> ``` (again this can be done through the inspect tool of the browser). Putting that in, a new message appears: *"Excellent job, one ultimate challenge awaits you, on krypton"*.
 
-Assuming that this is just another page to head to, we go to **/krypton** where we find a user input box and the message *"This tool pings websites, but in space"*. Because it takes an input from us and the input is expected to be a bash command, I know it's probably a command injection. This means we can enter different bash commands and they should execute on the server's OS. My default check is to enter ``` id||ls; ``` which causes the second command (ls) to execute. Doing so we see that flag.txt exists. Now all we need to do is read that file and we should be set. Inputting ``` id||cat flag.txt; ``` gives us the flag: **shctf{exp01ting_w3bs1tes_1N_SP@C3}**
+Assuming that this is just another page to head to, we go to **/krypton** where we find a user input box and the message *"This tool pings websites, but in space"*. Because it takes input from us and the input is expected to be a bash command, I know it's probably a command injection. This means we can enter different bash commands and they should execute on the server's OS. My default check is to enter ``` id||ls; ``` which causes the second command (ls) to execute. By doing so we see that flag.txt exists. Now all we need to do is read that file and we should be set. Inputting ``` id||cat flag.txt; ``` gives us the flag: **shctf{exp01ting_w3bs1tes_1N_SP@C3}**
