@@ -47,7 +47,7 @@ plugins:
 
 # not being registered at all
 minima:
-  skin: solarized
+  skin: classic
   social_links:
     - { platform: github, user_url: "https://github.com/jaedyno15" }
     - { platform: linkedin, user_url: "https://www.linkedin.com/in/jaedyn-okabe"}
