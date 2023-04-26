@@ -19,7 +19,15 @@ Points: 100
 
 ---
 
-Loading up the website we see an image of a robot which hints at needing to check the robots.txt file (file listing the urls that webscrapers like google are allowed/disallowed to display). So adding it to the url takes you there and we see that the disallowed site is **/humans.txt**.
+<h1> Description </h1>
+
+Man, web exploitation sure is fun. Sometimes you just need to go back to the basics, you know what I mean? Everything you need to get started on your journey to becoming a web master is here.
+
+p.s: You can make anything space themed if you try hard enough.
+
+---
+
+Loading up the website given we see an image of a robot which hints at needing to check the robots.txt file (file listing the urls that webscrapers like google are allowed/disallowed to display). So adding it to the url takes you there and we see that the disallowed site is **/humans.txt**.
 <img src="/ctf_writeups/assets/images/robot.jpeg"  width="30%" height="30%">
 
 Once we head to that page, we see an image of an astronaut holding a cookie and saying "You look pretty human, but we have to be sure. Go eat something and come back here". Again the image is a clue and we know to look at the cookies of the site. 

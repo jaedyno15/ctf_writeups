@@ -12,8 +12,15 @@ Points: 148
 
 ---
 
+<h1> Description </h1>
 
-We have a txt file that appears to be empty. However, if you try and highlight the file contents you see that there are a bunch of whitespaces.
+Starfleet has received a transmission from Bynaus. However, the message apears to be blank. Is there some kind of hidden message here?
+
+Download File: [transmission.txt](/ctf_writeups/assets/challenges/transmission.txt)
+
+---
+
+We have a txt file that appears to be empty. However, if you try and highlight the file contents you see that there are a bunch of whitespace.
 
 ![whitespaces](/ctf_writeups/assets/images/whitespace.png)
 

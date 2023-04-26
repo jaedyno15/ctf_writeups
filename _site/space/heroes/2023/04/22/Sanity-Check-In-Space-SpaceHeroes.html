@@ -6,22 +6,23 @@
 <title>Sanity Check In Space - Space Heroes CTF | Jaedyn Okabe</title>
 <meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="Sanity Check In Space - Space Heroes CTF" />
+<meta name="author" content="Jaedyn Okabe" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Hi I’m a undergrad student at Queen’s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I am currently working on in cybersecurity." />
 <meta property="og:description" content="Hi I’m a undergrad student at Queen’s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I am currently working on in cybersecurity." />
-<link rel="canonical" href="http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html" />
-<meta property="og:url" content="http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html" />
+<link rel="canonical" href="http://localhost:4000/ctf_writeups/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html" />
+<meta property="og:url" content="http://localhost:4000/ctf_writeups/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html" />
 <meta property="og:site_name" content="Jaedyn Okabe" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-22T21:22:34-04:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Sanity Check In Space - Space Heroes CTF" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-22T21:22:34-04:00","datePublished":"2023-04-22T21:22:34-04:00","description":"Hi I’m a undergrad student at Queen’s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I am currently working on in cybersecurity.","headline":"Sanity Check In Space - Space Heroes CTF","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html"},"url":"http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jaedyn Okabe"},"dateModified":"2023-04-22T21:22:34-04:00","datePublished":"2023-04-22T21:22:34-04:00","description":"Hi I’m a undergrad student at Queen’s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I am currently working on in cybersecurity.","headline":"Sanity Check In Space - Space Heroes CTF","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ctf_writeups/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html"},"url":"http://localhost:4000/ctf_writeups/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Jaedyn Okabe" /><body><header class="site-header">
+<link rel="stylesheet" href="/ctf_writeups/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/ctf_writeups/feed.xml" title="Jaedyn Okabe" /><body><header class="site-header">
 
-    <div class="wrapper"><a class="site-title" rel="author" href="/">Jaedyn Okabe</a><nav class="site-nav">
+    <div class="wrapper"><a class="site-title" rel="author" href="/ctf_writeups/">Jaedyn Okabe</a><nav class="site-nav">
           <input type="checkbox" id="nav-trigger" class="nav-trigger" />
           <label for="nav-trigger">
             <span class="menu-icon">
@@ -31,7 +32,7 @@
             </span>
           </label>
   
-          <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+          <div class="trigger"><a class="page-link" href="/ctf_writeups/about/">About</a></div>
         </nav></div>
   </header><main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -60,7 +61,15 @@
 
 <hr />
 
-<p>Loading up the website we see an image of a robot which hints at needing to check the robots.txt file (file listing the urls that webscrapers like google are allowed/disallowed to display). So adding it to the url takes you there and we see that the disallowed site is <strong>/humans.txt</strong>.
+<h1> Description </h1>
+
+<p>Man, web exploitation sure is fun. Sometimes you just need to go back to the basics, you know what I mean? Everything you need to get started on your journey to becoming a web master is here.</p>
+
+<p>p.s: You can make anything space themed if you try hard enough.</p>
+
+<hr />
+
+<p>Loading up the website given we see an image of a robot which hints at needing to check the robots.txt file (file listing the urls that webscrapers like google are allowed/disallowed to display). So adding it to the url takes you there and we see that the disallowed site is <strong>/humans.txt</strong>.
 <img src="/ctf_writeups/assets/images/robot.jpeg" width="30%" height="30%" /></p>
 
 <p>Once we head to that page, we see an image of an astronaut holding a cookie and saying “You look pretty human, but we have to be sure. Go eat something and come back here”. Again the image is a clue and we know to look at the cookies of the site.</p>
@@ -73,21 +82,25 @@
 
 <p>Assuming that this is just another page to head to, we go to <strong>/krypton</strong> where we find a user input box and the message <em>“This tool pings websites, but in space”</em>. Because it takes input from us and the input is expected to be a bash command, I know it’s probably a command injection. This means we can enter different bash commands and they should execute on the server’s OS. My default check is to enter <code class="language-plaintext highlighter-rouge">id||ls;</code> which causes the second command (ls) to execute. By doing so we see that flag.txt exists. Now all we need to do is read that file and we should be set. Inputting <code class="language-plaintext highlighter-rouge">id||cat flag.txt;</code> gives us the flag: <strong>shctf{exp01ting_w3bs1tes_1N_SP@C3}</strong></p>
 
-  </div><a class="u-url" href="/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html" hidden></a>
+  </div><a class="u-url" href="/ctf_writeups/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
-    <data class="u-url" href="/"></data>
+    <data class="u-url" href="/ctf_writeups/"></data>
   
     <div class="wrapper">
   
       <div class="footer-col-wrapper">
         <div class="footer-col">
           <p class="feed-subscribe">
-            <a href="http://localhost:4000/feed.xml">
+            <a href="http://localhost:4000/ctf_writeups/feed.xml">
               
             </a>
           </p>
+          <ul class="contact-list">
+            <li class="p-name">Jaedyn Okabe</li>
+            <li><a class="u-email" href="mailto:jaedyn.okabe@gmail.com">jaedyn.okabe@gmail.com</a></li>
+          </ul>
         </div>
         <div class="footer-col">
           <p>Hi I&#39;m a undergrad student at Queen&#39;s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I  am currently working on in cybersecurity.</p>
@@ -97,25 +110,25 @@
       <div class="social-links"><ul class="social-media-list"><li>
     <a rel="me" href="https://github.com/jaedyno15" target="_blank" title="github">
       <svg class="svg-icon grey">
-        <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+        <use xlink:href="/ctf_writeups/assets/minima-social-icons.svg#github"></use>
       </svg>
     </a>
   </li><li>
     <a rel="me" href="https://www.linkedin.com/in/jaedyn-okabe" target="_blank" title="linkedin">
       <svg class="svg-icon grey">
-        <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
+        <use xlink:href="/ctf_writeups/assets/minima-social-icons.svg#linkedin"></use>
       </svg>
     </a>
   </li><li>
-    <a rel="me" href="https://tryhackme.com/p/jay4221" target="_blank" title="tryhackme">
+    <a rel="me" href="https://tryhackme.com/p/jae03" target="_blank" title="tryhackme">
       <svg class="svg-icon grey">
-        <use xlink:href="/assets/minima-social-icons.svg#tryhackme"></use>
+        <use xlink:href="/ctf_writeups/assets/minima-social-icons.svg#tryhackme"></use>
       </svg>
     </a>
   </li><li>
     <a rel="me" href="https://ctftime.org/user/154304" target="_blank" title="ctftime">
       <svg class="svg-icon grey">
-        <use xlink:href="/assets/minima-social-icons.svg#ctftime"></use>
+        <use xlink:href="/ctf_writeups/assets/minima-social-icons.svg#ctftime"></use>
       </svg>
     </a>
   </li></ul></div>

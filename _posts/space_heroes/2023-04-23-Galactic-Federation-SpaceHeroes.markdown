@@ -13,8 +13,15 @@ Points: 221
 
 ---
 
+<h1> Description </h1>
 
-We're given a bin file that brings us to a login page when we try running it. Pulling up Ghidra to decompile the file we can see what the login error checking is. 
+After escaping galactic federal prison, you (the legendary Rick Sanchez) have just given yourself Level 9 access to the federation headquarters. Now, you must break into their computer systems and find a way to topple the galactic government.
+
+Bin File: [galactic_federation.bin](/ctf_writeups/assets/challenges/galactic_federation.bin)
+
+--- 
+
+We're given a bin file and some python code to connect to the server. Running the bin file locally first (or just connecting to the server right away if you want) to see what it does brings us to a login page. Pulling up [Ghidra] [Ghidra] to decompile the file we can see what the login error checking is. 
 
 {% highlight c++ %}
     bVar1 = false;
@@ -36,7 +43,7 @@ LAB_00403dc9:
 
 We see in the login_page function that it compares the user (var local_78) to **'hktpu'** and the password (local_58) to **'8fs7}:f~Y;unS:yfqL;uZ'**. We can also see here that the inputs are going through a function called *obfuscate()* which is altering them.
 
-So using ghidra to open that function we can see that each character gets the char *'\a'* added to it. 
+So using Ghidra to open that function we can see that each character gets the char *'\a'* added to it. 
 
 {% highlight c++ %}
 basic_string * obfuscate(basic_string *param_1)
@@ -97,7 +104,9 @@ Deobfuscated user: admin
 Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
 ``` 
 
-Now that we're in, we're given lots of options and each of those options has even more choices. So instead of blindly trying to find something we can go back to ghidra and look for a function that prints the flag. From there we can usually work backward to get the desired output. 
+Now that we're in, we're given lots of options and each of those options has even more choices. So instead of blindly trying to find something we can go back to Ghidra and look for a function that prints the flag. From there we can usually work backward to get the desired output.
+
+![galactic_federation_terminal](/ctf_writeups/assets/images/galactic_federation_terminal.png)
 
 We see a 'print_flag' function so now we can find all references to that function (rick-clicking and selecting 'show references to'). Following the first reference, we see the 'collapse_economy' function. Then following that function we finally see the one we need to interact with, which is 'adjust_economy'. 
 
@@ -116,8 +125,11 @@ We see a 'print_flag' function so now we can find all references to that functio
 
 Within the 'adjust_economy' function, 'collapse_economy' will be called if currency == 0 and the galactic_currency == 'usd'. 
 
-So starting with the easy one we can change the galactic currency to usd. Either keep using ghidra to find the right function or just play around with the program until you find the 'presidential_decree' function and from there we can use the 'change_galactic_currency' option which takes any string input and set it to usd. 
+So starting with the easy one we can change the galactic currency to usd. Either keep using Ghidra to find the right function or just play around with the program until you find the 'presidential_decree' function and from there we can use the 'change_galactic_currency' option which takes any string input and set it to usd. 
 
-Then we can use head back to the 'adjust_economy' function and use 'inflate_currency' which takes an integer as a percentage to change the currency value. Before we try adding any values though we can check what our input will do. We see {% highlight c++ %} currency = currency + (var / 100) * currency {% endhighlight %} where var is the percentage we input (var is not the original variable name, ghidra lets you rename variables which is what I have done to make reading the code easier). Given this info, we can input **-100** or any value you want that will cause the currency to drop to 0 or below.
+Then we can use head back to the 'adjust_economy' function and use 'inflate_currency' which takes an integer as a percentage to change the currency value. Before we try adding any values though we can check what our input will do. We see {% highlight c++ %} currency = currency + (var / 100) * currency {% endhighlight %} where var is the percentage we input (var is not the original variable name, Ghidra lets you rename variables which is what I have done to make reading the code easier). Given this info, we can input **-100** or any value you want that will cause the currency to drop to 0 or below.
 
 As soon as both changes are made, a series of text dialogues print out along with the flag: **shctf{w4it_uH_wh0s_P4y1Ng_m3_2_y3L1_@_tH15_gUy?}**
+
+
+[Ghidra]: https://ghidra-sre.org/

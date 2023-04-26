@@ -12,6 +12,16 @@ Points: 184
 
 ---
 
+<h1> Description </h1>
+
+Princess Leia has been kidnapped! She managed to send a message to this droid we have recovered. It was damaged while we were recovering it however. It seems that sometimes you have to tear something down, in order to build them back up.
+
+Can you recover the message?
+
+Download File: [A_New_Hope.pptx](/ctf_writeups/assets/challenges/A_New_Hope.pptx)
+
+---
+
 We get a ppt file to download which contains a single slide that looks like this.
 
 ![initial_ppt](/ctf_writeups/assets/images/new_hope_init.png)

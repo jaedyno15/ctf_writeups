@@ -1,6 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T17:29:20-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jaedyn Okabe</title><subtitle>Hi I&apos;m a undergrad student at Queen&apos;s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I  am currently working on in cybersecurity.</subtitle><entry><title type="html">A New Hope - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes.html" rel="alternate" type="text/html" title="A New Hope - Space Heroes CTF" /><published>2023-04-23T20:56:54-04:00</published><updated>2023-04-23T20:56:54-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes.html">&lt;p&gt;Category: Forensics&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/ctf_writeups/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ctf_writeups/" rel="alternate" type="text/html" /><updated>2023-04-26T11:28:44-04:00</updated><id>http://localhost:4000/ctf_writeups/feed.xml</id><title type="html">Jaedyn Okabe</title><subtitle>Hi I&apos;m a undergrad student at Queen&apos;s University pursuing a degree in Computing with a focus in security. This site holds writeups, my resume, CTF stats, and what I  am currently working on in cybersecurity.</subtitle><author><name>Jaedyn Okabe</name><email>jaedyn.okabe@gmail.com</email></author><entry><title type="html">A New Hope - Space Heroes CTF</title><link href="http://localhost:4000/ctf_writeups/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes.html" rel="alternate" type="text/html" title="A New Hope - Space Heroes CTF" /><published>2023-04-23T20:56:54-04:00</published><updated>2023-04-23T20:56:54-04:00</updated><id>http://localhost:4000/ctf_writeups/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/ctf_writeups/space/heroes/2023/04/23/A-New-Hope-SpaceHeroes.html">&lt;p&gt;Category: Forensics&lt;/p&gt;
 
 &lt;p&gt;Points: 184&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Description &lt;/h1&gt;
+
+&lt;p&gt;Princess Leia has been kidnapped! She managed to send a message to this droid we have recovered. It was damaged while we were recovering it however. It seems that sometimes you have to tear something down, in order to build them back up.&lt;/p&gt;
+
+&lt;p&gt;Can you recover the message?&lt;/p&gt;
+
+&lt;p&gt;Download File: &lt;a href=&quot;/ctf_writeups/assets/challenges/A_New_Hope.pptx&quot;&gt;A_New_Hope.pptx&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -18,13 +28,21 @@
 
 &lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/new_hope_solve.png&quot; alt=&quot;png_solve&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The flag is &lt;strong&gt;shctf{help_m3_ob1_y0u’re_my_0n1y_hope}&lt;/strong&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Space" /><category term="Heroes" /><summary type="html">Category: Forensics</summary></entry><entry><title type="html">Galactic Federation - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes.html" rel="alternate" type="text/html" title="Galactic Federation - Space Heroes CTF" /><published>2023-04-23T18:10:18-04:00</published><updated>2023-04-23T18:10:18-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes.html">&lt;p&gt;Category: RE&lt;/p&gt;
+&lt;p&gt;The flag is &lt;strong&gt;shctf{help_m3_ob1_y0u’re_my_0n1y_hope}&lt;/strong&gt;.&lt;/p&gt;</content><author><name>Jaedyn Okabe</name><email>jaedyn.okabe@gmail.com</email></author><category term="Space" /><category term="Heroes" /><summary type="html">Category: Forensics</summary></entry><entry><title type="html">Galactic Federation - Space Heroes CTF</title><link href="http://localhost:4000/ctf_writeups/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes.html" rel="alternate" type="text/html" title="Galactic Federation - Space Heroes CTF" /><published>2023-04-23T18:10:18-04:00</published><updated>2023-04-23T18:10:18-04:00</updated><id>http://localhost:4000/ctf_writeups/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/ctf_writeups/space/heroes/2023/04/23/Galactic-Federation-SpaceHeroes.html">&lt;p&gt;Category: RE&lt;/p&gt;
 
 &lt;p&gt;Points: 221&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;We’re given a bin file that brings us to a login page when we try running it. Pulling up Ghidra to decompile the file we can see what the login error checking is.&lt;/p&gt;
+&lt;h1&gt; Description &lt;/h1&gt;
+
+&lt;p&gt;After escaping galactic federal prison, you (the legendary Rick Sanchez) have just given yourself Level 9 access to the federation headquarters. Now, you must break into their computer systems and find a way to topple the galactic government.&lt;/p&gt;
+
+&lt;p&gt;Bin File: &lt;a href=&quot;/ctf_writeups/assets/challenges/galactic_federation.bin&quot;&gt;galactic_federation.bin&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;We’re given a bin file and some python code to connect to the server. Running the bin file locally first (or just connecting to the server right away if you want) to see what it does brings us to a login page. Pulling up &lt;a href=&quot;https://ghidra-sre.org/&quot;&gt;Ghidra&lt;/a&gt; to decompile the file we can see what the login error checking is.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;    &lt;span class=&quot;n&quot;&gt;bVar1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;obfuscate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local_78&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -43,7 +61,7 @@
 
 &lt;p&gt;We see in the login_page function that it compares the user (var local_78) to &lt;strong&gt;‘hktpu’&lt;/strong&gt; and the password (local_58) to &lt;strong&gt;‘8fs7}:f~Y;unS:yfqL;uZ’&lt;/strong&gt;. We can also see here that the inputs are going through a function called &lt;em&gt;obfuscate()&lt;/em&gt; which is altering them.&lt;/p&gt;
 
-&lt;p&gt;So using ghidra to open that function we can see that each character gets the char &lt;em&gt;‘\a’&lt;/em&gt; added to it.&lt;/p&gt;
+&lt;p&gt;So using Ghidra to open that function we can see that each character gets the char &lt;em&gt;‘\a’&lt;/em&gt; added to it.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;n&quot;&gt;basic_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;obfuscate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;basic_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param_1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
@@ -98,7 +116,9 @@
 Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now that we’re in, we’re given lots of options and each of those options has even more choices. So instead of blindly trying to find something we can go back to ghidra and look for a function that prints the flag. From there we can usually work backward to get the desired output.&lt;/p&gt;
+&lt;p&gt;Now that we’re in, we’re given lots of options and each of those options has even more choices. So instead of blindly trying to find something we can go back to Ghidra and look for a function that prints the flag. From there we can usually work backward to get the desired output.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/galactic_federation_terminal.png&quot; alt=&quot;galactic_federation_terminal&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We see a ‘print_flag’ function so now we can find all references to that function (rick-clicking and selecting ‘show references to’). Following the first reference, we see the ‘collapse_economy’ function. Then following that function we finally see the one we need to interact with, which is ‘adjust_economy’.&lt;/p&gt;
 
@@ -115,19 +135,27 @@ Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
 
 &lt;p&gt;Within the ‘adjust_economy’ function, ‘collapse_economy’ will be called if currency == 0 and the galactic_currency == ‘usd’.&lt;/p&gt;
 
-&lt;p&gt;So starting with the easy one we can change the galactic currency to usd. Either keep using ghidra to find the right function or just play around with the program until you find the ‘presidential_decree’ function and from there we can use the ‘change_galactic_currency’ option which takes any string input and set it to usd.&lt;/p&gt;
+&lt;p&gt;So starting with the easy one we can change the galactic currency to usd. Either keep using Ghidra to find the right function or just play around with the program until you find the ‘presidential_decree’ function and from there we can use the ‘change_galactic_currency’ option which takes any string input and set it to usd.&lt;/p&gt;
 
 &lt;p&gt;Then we can use head back to the ‘adjust_economy’ function and use ‘inflate_currency’ which takes an integer as a percentage to change the currency value. Before we try adding any values though we can check what our input will do. We see&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt; &lt;span class=&quot;n&quot;&gt;currency&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currency&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currency&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;where var is the percentage we input (var is not the original variable name, ghidra lets you rename variables which is what I have done to make reading the code easier). Given this info, we can input &lt;strong&gt;-100&lt;/strong&gt; or any value you want that will cause the currency to drop to 0 or below.&lt;/p&gt;
+&lt;p&gt;where var is the percentage we input (var is not the original variable name, Ghidra lets you rename variables which is what I have done to make reading the code easier). Given this info, we can input &lt;strong&gt;-100&lt;/strong&gt; or any value you want that will cause the currency to drop to 0 or below.&lt;/p&gt;
 
-&lt;p&gt;As soon as both changes are made, a series of text dialogues print out along with the flag: &lt;strong&gt;shctf{w4it_uH_wh0s_P4y1Ng_m3&lt;em&gt;2_y3L1&lt;/em&gt;@_tH15_gUy?}&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="space" /><category term="heroes" /><summary type="html">Category: RE</summary></entry><entry><title type="html">Bynary Encoding - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/22/Bynary-Encoding-SpaceHeroes.html" rel="alternate" type="text/html" title="Bynary Encoding - Space Heroes CTF" /><published>2023-04-22T21:51:30-04:00</published><updated>2023-04-22T21:51:30-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/22/Bynary-Encoding-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/22/Bynary-Encoding-SpaceHeroes.html">&lt;p&gt;Category: crypto&lt;/p&gt;
+&lt;p&gt;As soon as both changes are made, a series of text dialogues print out along with the flag: &lt;strong&gt;shctf{w4it_uH_wh0s_P4y1Ng_m3&lt;em&gt;2_y3L1&lt;/em&gt;@_tH15_gUy?}&lt;/strong&gt;&lt;/p&gt;</content><author><name>Jaedyn Okabe</name><email>jaedyn.okabe@gmail.com</email></author><category term="space" /><category term="heroes" /><summary type="html">Category: RE</summary></entry><entry><title type="html">Bynary Encoding - Space Heroes CTF</title><link href="http://localhost:4000/ctf_writeups/space/heroes/2023/04/22/Bynary-Encoding-SpaceHeroes.html" rel="alternate" type="text/html" title="Bynary Encoding - Space Heroes CTF" /><published>2023-04-22T21:51:30-04:00</published><updated>2023-04-22T21:51:30-04:00</updated><id>http://localhost:4000/ctf_writeups/space/heroes/2023/04/22/Bynary-Encoding-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/ctf_writeups/space/heroes/2023/04/22/Bynary-Encoding-SpaceHeroes.html">&lt;p&gt;Category: crypto&lt;/p&gt;
 
 &lt;p&gt;Points: 148&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;We have a txt file that appears to be empty. However, if you try and highlight the file contents you see that there are a bunch of whitespaces.&lt;/p&gt;
+&lt;h1&gt; Description &lt;/h1&gt;
+
+&lt;p&gt;Starfleet has received a transmission from Bynaus. However, the message apears to be blank. Is there some kind of hidden message here?&lt;/p&gt;
+
+&lt;p&gt;Download File: &lt;a href=&quot;/ctf_writeups/assets/challenges/transmission.txt&quot;&gt;transmission.txt&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;We have a txt file that appears to be empty. However, if you try and highlight the file contents you see that there are a bunch of whitespace.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/whitespace.png&quot; alt=&quot;whitespaces&quot; /&gt;&lt;/p&gt;
 
@@ -141,7 +169,7 @@ Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
 
 &lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/cyberchef_bynary.png&quot; alt=&quot;cyberchef_bynary&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;This gives us the flag: &lt;strong&gt;shctf{a_bl1nd_m4n_t3aching_an_4ndr0id_h0w_to_pa1nt}&lt;/strong&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Space" /><category term="Heroes" /><summary type="html">Category: crypto</summary></entry><entry><title type="html">Sanity Check In Space - Space Heroes CTF</title><link href="http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html" rel="alternate" type="text/html" title="Sanity Check In Space - Space Heroes CTF" /><published>2023-04-22T21:22:34-04:00</published><updated>2023-04-22T21:22:34-04:00</updated><id>http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html">&lt;style&gt;
+&lt;p&gt;This gives us the flag: &lt;strong&gt;shctf{a_bl1nd_m4n_t3aching_an_4ndr0id_h0w_to_pa1nt}&lt;/strong&gt;.&lt;/p&gt;</content><author><name>Jaedyn Okabe</name><email>jaedyn.okabe@gmail.com</email></author><category term="Space" /><category term="Heroes" /><summary type="html">Category: crypto</summary></entry><entry><title type="html">Sanity Check In Space - Space Heroes CTF</title><link href="http://localhost:4000/ctf_writeups/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html" rel="alternate" type="text/html" title="Sanity Check In Space - Space Heroes CTF" /><published>2023-04-22T21:22:34-04:00</published><updated>2023-04-22T21:22:34-04:00</updated><id>http://localhost:4000/ctf_writeups/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes</id><content type="html" xml:base="http://localhost:4000/ctf_writeups/space/heroes/2023/04/22/Sanity-Check-In-Space-SpaceHeroes.html">&lt;style&gt;
     img{
         display: block;
         margin-left: auto;
@@ -156,7 +184,15 @@ Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
 
 &lt;hr /&gt;
 
-&lt;p&gt;Loading up the website we see an image of a robot which hints at needing to check the robots.txt file (file listing the urls that webscrapers like google are allowed/disallowed to display). So adding it to the url takes you there and we see that the disallowed site is &lt;strong&gt;/humans.txt&lt;/strong&gt;.
+&lt;h1&gt; Description &lt;/h1&gt;
+
+&lt;p&gt;Man, web exploitation sure is fun. Sometimes you just need to go back to the basics, you know what I mean? Everything you need to get started on your journey to becoming a web master is here.&lt;/p&gt;
+
+&lt;p&gt;p.s: You can make anything space themed if you try hard enough.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Loading up the website given we see an image of a robot which hints at needing to check the robots.txt file (file listing the urls that webscrapers like google are allowed/disallowed to display). So adding it to the url takes you there and we see that the disallowed site is &lt;strong&gt;/humans.txt&lt;/strong&gt;.
 &lt;img src=&quot;/ctf_writeups/assets/images/robot.jpeg&quot; width=&quot;30%&quot; height=&quot;30%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once we head to that page, we see an image of an astronaut holding a cookie and saying “You look pretty human, but we have to be sure. Go eat something and come back here”. Again the image is a clue and we know to look at the cookies of the site.&lt;/p&gt;
@@ -167,7 +203,7 @@ Deobfuscated password: 1_l0v3_wR4ngL3r_jE4nS
 
 &lt;p&gt;Taking a guess we can move to the &lt;strong&gt;/arrakis&lt;/strong&gt; page. There we see that a password is required but since I push all my requests and responses through burpsuite I saw that there’s a comment on the page saying &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;!-- The password is &quot;FearIsTheMindKiller&quot; --&amp;gt;&lt;/code&gt; (again this can be done through the inspect tool of the browser). Putting that in, a new message appears: &lt;em&gt;“Excellent job, one ultimate challenge awaits you, on krypton”&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Assuming that this is just another page to head to, we go to &lt;strong&gt;/krypton&lt;/strong&gt; where we find a user input box and the message &lt;em&gt;“This tool pings websites, but in space”&lt;/em&gt;. Because it takes input from us and the input is expected to be a bash command, I know it’s probably a command injection. This means we can enter different bash commands and they should execute on the server’s OS. My default check is to enter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id||ls;&lt;/code&gt; which causes the second command (ls) to execute. By doing so we see that flag.txt exists. Now all we need to do is read that file and we should be set. Inputting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id||cat flag.txt;&lt;/code&gt; gives us the flag: &lt;strong&gt;shctf{exp01ting_w3bs1tes_1N_SP@C3}&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="Space" /><category term="Heroes" /><summary type="html"></summary></entry><entry><title type="html">Escape The Matrix - Summit CTF</title><link href="http://localhost:4000/summit/2023/04/16/Escape-The-Matrix-Summit.html" rel="alternate" type="text/html" title="Escape The Matrix - Summit CTF" /><published>2023-04-16T01:22:34-04:00</published><updated>2023-04-16T01:22:34-04:00</updated><id>http://localhost:4000/summit/2023/04/16/Escape-The-Matrix-Summit</id><content type="html" xml:base="http://localhost:4000/summit/2023/04/16/Escape-The-Matrix-Summit.html">&lt;p&gt;Category: Forensics&lt;/p&gt;
+&lt;p&gt;Assuming that this is just another page to head to, we go to &lt;strong&gt;/krypton&lt;/strong&gt; where we find a user input box and the message &lt;em&gt;“This tool pings websites, but in space”&lt;/em&gt;. Because it takes input from us and the input is expected to be a bash command, I know it’s probably a command injection. This means we can enter different bash commands and they should execute on the server’s OS. My default check is to enter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id||ls;&lt;/code&gt; which causes the second command (ls) to execute. By doing so we see that flag.txt exists. Now all we need to do is read that file and we should be set. Inputting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id||cat flag.txt;&lt;/code&gt; gives us the flag: &lt;strong&gt;shctf{exp01ting_w3bs1tes_1N_SP@C3}&lt;/strong&gt;&lt;/p&gt;</content><author><name>Jaedyn Okabe</name><email>jaedyn.okabe@gmail.com</email></author><category term="Space" /><category term="Heroes" /><summary type="html"></summary></entry><entry><title type="html">Escape The Matrix - Summit CTF</title><link href="http://localhost:4000/ctf_writeups/summit/2023/04/16/Escape-The-Matrix-Summit.html" rel="alternate" type="text/html" title="Escape The Matrix - Summit CTF" /><published>2023-04-16T01:22:34-04:00</published><updated>2023-04-16T01:22:34-04:00</updated><id>http://localhost:4000/ctf_writeups/summit/2023/04/16/Escape-The-Matrix-Summit</id><content type="html" xml:base="http://localhost:4000/ctf_writeups/summit/2023/04/16/Escape-The-Matrix-Summit.html">&lt;p&gt;Category: Forensics&lt;/p&gt;
 
 &lt;p&gt;Points: 150&lt;/p&gt;
 
@@ -204,7 +240,7 @@ bWVzfQ==
 
 &lt;hr /&gt;
 
-&lt;p&gt;Note: Out of curiosity I repeated this process with a different stream and it just returned jibberish so I guess I was lucky that I tried the correct stream first. I also determined that the second set of base64 data that was repeating (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tscc1QuycZN4&lt;/code&gt;) just indicated what stream it was a part of. Decoding it did not result in readable data either.&lt;/p&gt;</content><author><name></name></author><category term="summit" /><summary type="html">Category: Forensics</summary></entry><entry><title type="html">SOAP - PICO CTF</title><link href="http://localhost:4000/pico/2023/03/18/SOAP-Pico.html" rel="alternate" type="text/html" title="SOAP - PICO CTF" /><published>2023-03-18T20:56:54-04:00</published><updated>2023-03-18T20:56:54-04:00</updated><id>http://localhost:4000/pico/2023/03/18/SOAP-Pico</id><content type="html" xml:base="http://localhost:4000/pico/2023/03/18/SOAP-Pico.html">&lt;p&gt;Category: Web Exploitation&lt;/p&gt;
+&lt;p&gt;Note: Out of curiosity I repeated this process with a different stream and it just returned jibberish so I guess I was lucky that I tried the correct stream first. I also determined that the second set of base64 data that was repeating (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tscc1QuycZN4&lt;/code&gt;) just indicated what stream it was a part of. Decoding it did not result in readable data either.&lt;/p&gt;</content><author><name>Jaedyn Okabe</name><email>jaedyn.okabe@gmail.com</email></author><category term="summit" /><summary type="html">Category: Forensics</summary></entry><entry><title type="html">SOAP - PICO CTF</title><link href="http://localhost:4000/ctf_writeups/pico/2023/03/18/SOAP-Pico.html" rel="alternate" type="text/html" title="SOAP - PICO CTF" /><published>2023-03-18T20:56:54-04:00</published><updated>2023-03-18T20:56:54-04:00</updated><id>http://localhost:4000/ctf_writeups/pico/2023/03/18/SOAP-Pico</id><content type="html" xml:base="http://localhost:4000/ctf_writeups/pico/2023/03/18/SOAP-Pico.html">&lt;p&gt;Category: Web Exploitation&lt;/p&gt;
 
 &lt;p&gt;Points: 100&lt;/p&gt;
 
@@ -257,4 +293,4 @@ bWVzfQ==
 
 &lt;p&gt;Now we can forward the traffic with this modification making sure that you have intercept traffic response on (action -&amp;gt; intercept -&amp;gt; show response?) and the response gives us a bunch of information including the flag: &lt;strong&gt;picoCTF{XML_3xtern@l_3nt1t1ty_0dcf926e}&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/soap_flag.png&quot; alt=&quot;soap_flag&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Pico" /><summary type="html">Category: Web Exploitation</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/ctf_writeups/assets/images/soap_flag.png&quot; alt=&quot;soap_flag&quot; /&gt;&lt;/p&gt;</content><author><name>Jaedyn Okabe</name><email>jaedyn.okabe@gmail.com</email></author><category term="Pico" /><summary type="html">Category: Web Exploitation</summary></entry></feed>
