@@ -24,7 +24,7 @@ When we open it up we see a series of DNS packets that all contain data. Since w
 
 ![stream1](/ctf_writeups/assets/images/escape_matrix_stream_1.png)
 
-I'm pretty sure that the first set of encrypted data is what we're looking for so just for testing on a small stream first I export this stream from Wireshark. Then isolating just the unique parts inside VS code (I'm sure there is a more efficient way to do this with tshark but that's fine) gives:
+I'm pretty sure that the first set of encrypted data is what we're looking for so just for testing on a small stream first I export this stream from Wireshark. Then isolating just the unique parts inside VS code (I'm sure there is a more efficient way to do this with tshark but that's fine) to get:
 
 ```
 VGhlIGZsYWcg
