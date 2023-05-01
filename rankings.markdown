@@ -4,6 +4,12 @@ title: Rankings
 permalink: /rankings/
 ---
 
+<style>
+    h3{
+        color: #2a7ae2;
+    }
+</style>
+
 Here are the competitions I have participated in this year including the team I competed with and the final ranking for each. 
 
 My main team Inodes is currently ranked 12th in Canada. 
