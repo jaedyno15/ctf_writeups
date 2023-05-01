@@ -52,7 +52,7 @@ minima:
 # uncomment and add if I want more pages in header (add resume link or something)
 header_pages:
   - about.markdown
-  - resume.pdf
+  - Resume.pdf
   - rankings.markdown
 
 # may not be right? 
