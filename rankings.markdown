@@ -16,7 +16,7 @@ My main team Inodes is currently ranked 12th in Canada.
 
 ---
 
-<h3>[UMDCTF 2023][UMDCTF 2023]: April 28-30, 2023</h3>
+<h3><a href="https://ctftime.org/event/1949">UMDCTF 2023</a>: April 28-30, 2023</h3>
 - Team: HYPHEN
 - Placed 27th (top 3%)
 
