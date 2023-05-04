@@ -52,10 +52,8 @@ minima:
 # uncomment and add if I want more pages in header (add resume link or something)
 header_pages:
   - about.markdown
-  - Resume.pdf
-  - rankings.markdown
-
-# may not be right? 
+  - resume.pdf
+  - rankings.markdown 
 
 # Exclude from processing.
 # The following items will not be processed, by default.
