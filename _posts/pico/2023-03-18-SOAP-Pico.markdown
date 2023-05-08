@@ -62,7 +62,7 @@ Here's the page we want to alter and inject the XML code into. The current conte
 
 To break this down, we create a doctype foo entity called xxe which is accessing the file at the given path. The file pathing is what the challenge description told us to try and access and we are adding an entity xxe which can be named to anything you want (it is just the name of the new entity).
 
-Now we can forward the traffic with this modification making sure that you have intercept traffic response on (action -> intercept -> show response?) and the response gives us a bunch of information including the flag: **picoCTF{XML_3xtern@l_3nt1t1ty_0dcf926e}**.
+Now we can forward the traffic with this modification making sure that you have intercept traffic response on (action -> Do intercept -> Response to this request) and the response gives us a bunch of information including the flag: **picoCTF{XML_3xtern@l_3nt1t1ty_0dcf926e}**.
 
 
 ![soap_flag](/ctf_writeups/assets/images/soap_flag.png)
