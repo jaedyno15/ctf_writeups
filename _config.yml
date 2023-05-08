@@ -14,6 +14,8 @@
 title: Jaedyn Okabe
 email: jaedyn.okabe@gmail.com
 
+tagline: A blog for CTF writeups
+
 
 # info for footer
 author: 
@@ -58,6 +60,14 @@ header_pages:
 
 # adding google analytics
 google_analytics: G-58MEVH0QSQ
+
+# socials - for seo tags
+social:
+  links:
+    - https://github.com/jaedyno15
+    - https://www.linkedin.com/in/jaedyn-okabe
+    - https://tryhackme.com/p/jae03
+    - https://ctftime.org/user/154304
 
 # Exclude from processing.
 # The following items will not be processed, by default.
