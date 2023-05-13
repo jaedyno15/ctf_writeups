@@ -51,13 +51,10 @@ minima:
     - { platform: ctftime, user_url: "https://ctftime.org/user/154304"}
 
 
-# uncomment and add if I want more pages in header (add resume link or something)
+# adding custom pages to the header
 header_pages:
   - about.markdown
-  - resume.pdf #idk if this is doing anything
   - rankings.markdown 
-  - index.markdown # should add link to home page 
-
 
 # adding google analytics
 google_analytics: G-58MEVH0QSQ
