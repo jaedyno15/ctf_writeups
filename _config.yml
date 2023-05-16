@@ -55,7 +55,6 @@ minima:
 header_pages:
   - about.markdown
   - rankings.markdown
-  - courses-and-certifications.markdown 
 
 # adding google analytics
 google_analytics: G-58MEVH0QSQ
