@@ -60,3 +60,9 @@ So now lets look at that string within IDA and after following it for a bit we s
 
 
 Again, I'll try converting it from base64 to ascii and this time we get the flag UMDCTF{l0v3_n@t1ve_fUns}
+
+
+---
+
+Note: if you want the comparison code with the data already formatted then here is the script I used: [comparison_code.py](/ctf_writeups/assets/code/comparison_code.py)
+
