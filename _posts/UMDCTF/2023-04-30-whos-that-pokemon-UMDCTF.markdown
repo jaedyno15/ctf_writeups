@@ -9,6 +9,7 @@ Category: Mobile
 
 Points: 352
 
+Solves: 116
 
 ---
 
@@ -68,7 +69,7 @@ Heading back over to the our game, we enter the name and we get a new screen wit
 
 Notes: I went in with a basic understanding of android development but no practice with it for CTFs, I referenced this writeup by [Harshit Maheshwari][reference writeup] and they go much more in-depth about the tools to use and good practices for reverse engineering apk files.  
 
-I did not get around to looking at this category until the final day and I knew a major patch had been issued. I am not 100% about what it was but after looking at the code, I believe the images that contained the flag were not encoded before. This meant that as soon as you opened it in a decompiler and found the image you could get the flag, completely bypassing the actual challenge. Now the image is encoded/encrypted so that is no longer a viable option but is still a good one to look out for. 
+I did not get around to looking at this category until the final day and I knew a major patch had been issued. I am not 100% about what it was but after looking at the code, I believe the images that contained the flag were not encrypted before. This meant that as soon as you opened it in a decompiler and found the image you could get the flag, completely bypassing the actual challenge. Now the image is encoded/encrypted so that is no longer a viable option but is still a good one to look out for. 
 
 
 
