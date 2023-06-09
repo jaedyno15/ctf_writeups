@@ -27,7 +27,7 @@ Download File: [pokeball_escape.apk](/ctf_writeups/assets/challenges/pokeball_es
 Loading up the apk file in [bluestacks][bluestacks] to see what we're working with, we are given a single screen and a message pops up every few seconds saying "!! CONDITIONS NOT MET TO ESCAPE !!". 
 
 
-<img  src="/ctf_writeups/assets/images/pokeball_escape.png"  style="display: block; margin: 0 auto">
+<img  src="/ctf_writeups/assets/images/pokeball_escape.png" width="600" height="600" style="display: block; margin: 0 auto">
 
 
 Heading over to my vm and using apktool to decompile the apk with ``` apktool d pokeball_escape.apk -o pokeball-escape-smali ```. Then using dex2jar we can get the java files and read those.
