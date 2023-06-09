@@ -21,26 +21,27 @@ Download File: [whos_that_pokemon.apk](/ctf_writeups/assets/challenges/whos_that
 
 ---
 
-We have an apk file which is used to run apps on android devices. So to run it, we need an android emulator and a decompiler for the file. [Android Studio][android studio] is probably the best tool for android app development and comes with built in emulators for android devices while giving you easy access to all the code. After playing around with it for a bit, I couldn't get my emulator working so I had to try a different route to emulate it. 
+We have an apk file which is used to run apps on android devices. So to run it, we need an android emulator and a decompiler for the file. [Android Studio][android studio] is probably the best tool for android app development and comes with a built in emulator while giving you easy access to all the code. After playing around with it for a bit, I couldn't get my emulator working so I had to try a different route. 
 
-So moving over to [bluestacks][bluestacks] which is an emulator used for running android games (among others) on you desktop. The process to upload local games is pretty quick although it took a few tries to realize it will only run with administrator privilege. 
+Moving over to the [bluestacks][bluestacks] emulator which had a pretty quick process to upload local apk files although it took a few tries to realize it will only run with administrator privilege. 
 
 ![whos_that_pokemon_load_screen](/ctf_writeups/assets/images/whos_that_pokemon_load_screen.png)
 
-Right when we launch the game, we have a screen that takes one input and that is the guess of the pokemon. Inputting a random answer doesn't do anything beyond making a sound. This doesn't seem to have any other info for us, so it is time to decompile it with APKTools so that we get the individual files and can then delve further.
+Right when I launch the game, there is a screen that takes one input and that is the guess of the pokemon. Inputting a random answer doesn't do anything beyond making a sound. This doesn't seem to have any other info, so it is time to decompile it with APKTool to get the individual files and can then delve further.
 
-The syntax to decompile this file after installing apktool is 'apktool d apk_file.apk -o output_folder_name'
+The syntax to decompile this file after installing apktool is ``` apktool d apk_file.apk -o output_folder_name ```
 
 ![whos_that_pokemon_smali](/ctf_writeups/assets/images/whos_that_pokemon_smali.png)
 
 
+From there I began to just search around all the files and see what kind of stuff I could find. After a while of searching around, I came across the *strings.smali* file which looked promising (smali_classes2/com/example/whosthatpokemon/R$strings.smali). 
 
-From there I began to just search around all the files and see what kind of stuff I could find. After a while of searching around, I came across the strings.smali file which looked promising (smali_classes2/com/example/whosthatpokemon/R$strings.smali). It contained a list of memory addresses and variable names of the different strings in hex. We see that there's a **pokemon** string with a corresponding value of ***0x7f100096***. I assumed that if we could then find a reference to this hex address or the string name itself then we would find the answer. While researching basic reverse engineering of android applications, I saw mention that these values can be found witin the res/values folder.
+It contained a list of memory addresses and variable names of the different strings in hex. We see that there's a **pokemon** string with a corresponding value of ***0x7f100096***. I assumed that if we could then find a reference to this hex address or the string name itself then we would find the answer. While researching basic reverse engineering of android applications, I saw mention that these values can be found within the res/values folder.
 
 ![smali res/values folder](/ctf_writeups/assets/images/smali_res_files.png)
 
 
-So you can either grep this entire folder for 'pokemon' and/or the hex address or you can narrow down your search by seeing what kind of data is held in each of the files. I let grep run in the background and decided to look around the files myself while I waited. Starting easy, I assumed that things such as the Integers, drawables, bools, and colors wouldn't be of much help. The only files that I found anything interesting on was the public.xml and strings.xml files. The public.xml gave me the information I already had so I guess this could have been a good place to start instead of where I did. 
+So either grepping this entire folder for 'pokemon' and/or the hex address or narrowing down the search by seeing what kind of data is held in each of the files is the next step. I let grep run in the background and decided to look around the files myself while I waited. Starting easy, I assumed that things such as the integers, drawables, bools, and colors wouldn't be of much help. The only files that I found anything interesting in was the public.xml and strings.xml files. The public.xml gave me the information I already had so I guess this could have been a good place to start instead of where I did. 
 
 {% highlight bash %}
     grep "pokemon" public.xml
@@ -49,7 +50,6 @@ So you can either grep this entire folder for 'pokemon' and/or the hex address o
     <public type="string" name="pokemon" id="0x7f100096" />
     <public type="style" name="Theme.Whosthatpokemon" id="0x7f110262" />
 {% endhighlight %}
-
 
 Repeating the above step with strings.xml showed not only the string names but also their values. Using grep to see if the pokemon string is there, we get the name of the pokemon, *Terrapulseonic*.
 
