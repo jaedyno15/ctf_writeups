@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "whos that pokemon - UMDCTF"
+title:  "Whos That Pokemon - UMDCTF"
 date:   2023-04-30 15:52:23 -0400
 categories: UMDCTF
 ---

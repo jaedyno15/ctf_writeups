@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "pokeball escape - UMDCTF"
+title:  "Pokeball Escape - UMDCTF"
 date:   2023-04-30 17:21:45 -0400
 categories: UMDCTF
 ---
@@ -40,7 +40,7 @@ Now opening up jd-gui, we can view all of the apk's code.
 
 ![jd_gui](/ctf_writeups/assets/images/pokeball_escape_jd_gui.png)
 
-Right as we open the MainActivity.class file there is an if-statement that stands out. It is checking the systemInfo of our device (in this case the bluestacks emulator) for the name "Devon Corporation". Knowing what needs to be changed, we head back to our emulator and go to Settings->Phone->Create a custom profile and then enter our known value as the manufacturer, brand, and model (I don't know which value it is checking so may as well test both at once).
+Right as we open the MainActivity.class file there is an if-statement that stands out. It is checking the systemInfo of our device (in this case the bluestacks emulator) for the name "Devon Corporation". Knowing what needs to be changed, we head back to our emulator and go to Settings->Phone->Create a custom profile and then enter our known value as the manufacturer, brand, and model (I don't know which value it is checking so may as well test them all at once).
 
 ![bluestacks_modification](/ctf_writeups/assets/images/change_device_info_UMDCTF.png)
 
