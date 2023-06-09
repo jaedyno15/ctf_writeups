@@ -26,16 +26,18 @@ Download File: [pokeball_escape.apk](/ctf_writeups/assets/challenges/pokeball_es
 
 As with all of the other mobile challenges I have done for this CTF I run the apk file on an android emulator and the intro screen had nothing to interact with or any hints about actually interacting with the app. So moving on, I decompiled it with apktools and then used jd gui to analyze the code. 
 
+![app_JNIdorino](/ctf_writeups/assets/images/app_jnidorino.png)
+
 We see that the entire MainActivity.class file is encrypted in what looks like base64 so I tried decoding a few just to see if they were real values but they only returned random chars. 
 
 ![main_activity_jnidorino](/ctf_writeups/assets/images/main_activity_jnidorino.png)
 
 
-The description mentions native libraries and as we can see in the MainActivity.class file one of the only plaintext lines is 'System.loadLibrary("jnidorino");' so I went looking for that library and found it at (JNIdorino-smali/lib/x86_64/libjnidorino.so). Opening it in IDA which is a binary disassembler lets us see all the strings by going View->Open Subviews->Strings.
+The description mentions native libraries and as we can see in the MainActivity.class file one of the only plaintext lines is ``` System.loadLibrary("jnidorino");``` so I went looking for that library and found it at ```JNIdorino-smali/lib/x86_64/libjnidorino.so```. Opening it in IDA which is a binary disassembler lets us see all the strings by going View->Open Subviews->Strings.
 
 ![ida_strings](/ctf_writeups/assets/images/IDA_Strings.png)
 
-Now we filter by Java_com_example_jnidorino_MainActivity to see only those strings that we were seeing before. We get 501 results but when I get a count of the strings in the evolve() function from the MainActivity.class file there is only 500. So saving both of those sets of data as python list variables and checking for the difference between them with a quick script we see that the one string that is different is *GhLagoBPGjAdjYQldkhrYdgky*.
+Now we filter by ```Java_com_example_jnidorino_MainActivity``` to see only those strings from before. We get 501 results but when I get a count of the strings in the evolve() function from the MainActivity.class file there is only 500. So saving both of those sets of data as python list variables and checking for the difference between them with a quick script we see that the one string that is different is *GhLagoBPGjAdjYQldkhrYdgky*.
 
 {% highlight python %}
     difference = []
@@ -64,5 +66,5 @@ Again, I'll try converting it from base64 to ascii and this time we get the flag
 
 ---
 
-Note: if you want the comparison code with the data already formatted then here is the script I used: [comparison_code.py](/ctf_writeups/assets/code/comparison_code.py)
+Note: if you want the comparison code with the data already formatted then here is the script I used [comparison_code.py](/ctf_writeups/assets/code/comparison_code.py)
 
