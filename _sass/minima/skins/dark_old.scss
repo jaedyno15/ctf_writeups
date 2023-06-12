@@ -12,12 +12,12 @@ $brand-color-dark:      darken($brand-color, 35%);
 
 $site-title-color:      $brand-color-light;
 
-$text-color:            #CCDDFF;
+$text-color:            #bbbbbb;
 $background-color:      #181818;
 $code-background-color: #212121;
 
-$link-base-color:       #9A99FF;
-$link-visited-color:    #35224a;
+$link-base-color:       #79b8ff;
+$link-visited-color:    $link-base-color;
 $link-hover-color:      $text-color;
 
 $border-color-01:       $brand-color-dark;
