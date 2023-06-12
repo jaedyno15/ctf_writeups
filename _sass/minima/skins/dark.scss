@@ -6,13 +6,13 @@
 // $color-scheme-dark: true;
 // @import "minima/skins/auto";
 
-$brand-color:           #dbdafe;
+$brand-color:           #999999;
 $brand-color-light:     lighten($brand-color, 5%);
 $brand-color-dark:      darken($brand-color, 35%);
 
 $site-title-color:      $brand-color-light;
 
-$text-color:            #dbdafe;
+$text-color:            #9A99FF;
 $background-color:      #181818;
 $code-background-color: #212121;
 
@@ -20,7 +20,7 @@ $link-base-color:       #9A99FF;
 $link-visited-color:    #6463a4;
 $link-hover-color:      $text-color;
 
-$border-color-01:       $brand-color-dark;
+$border-color-01:       #cbcbcf;
 $border-color-02:       $brand-color-light;
 $border-color-03:       $brand-color;
 
