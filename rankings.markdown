@@ -30,7 +30,7 @@ My main team Inodes is currently ranked 12th in Canada.
 - Team: Inodes
 - Placed top 30%
 
-<h3><a href="https://picoctf.org/)">PICO CTF:</a></h3>
+<h3><a href="https://picoctf.org/">PICO CTF:</a></h3>
 - Date: March 14-28, 2023
 - Team: Inodes
 - Placed top 10%
