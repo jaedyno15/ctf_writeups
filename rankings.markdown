@@ -35,7 +35,7 @@ My main team Inodes is currently ranked 12th in Canada.
 - Team: Inodes
 - Placed top 10%
 
-<h3><a href="https://ctftime.org/event/1884">vikeCTF:</a></h3>
+<h3><a href="https://ctftime.org/event/1884">VikeCTF:</a></h3>
 - Date: March 17-19, 2023
 - Team: Inodes
 - Placed 36th (top 18%)
