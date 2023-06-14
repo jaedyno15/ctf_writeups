@@ -49,6 +49,7 @@ minima:
     - { platform: linkedin, user_url: "https://www.linkedin.com/in/jaedyn-okabe"}
     - { platform: tryhackme, user_url: "https://tryhackme.com/p/jae03"}
     - { platform: ctftime, user_url: "https://ctftime.org/user/154304"}
+    - { platform: ringzer0 , user_url: "https://ringzer0ctf.com/profile/42725/jae03"}
 
 
 # adding custom pages to the header
@@ -66,6 +67,7 @@ social:
     - https://www.linkedin.com/in/jaedyn-okabe
     - https://tryhackme.com/p/jae03
     - https://ctftime.org/user/154304
+    - https://ringzer0ctf.com/profile/42725/jae03
 
 # Exclude from processing.
 # The following items will not be processed, by default.
