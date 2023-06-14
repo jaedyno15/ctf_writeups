@@ -35,7 +35,7 @@
 <symbol id="ctftime" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M24 0v24H0V0h24Zm-3.077 3.077L7.067 3.076 16 12.816 10.369 19l-2.195-2.612 3.476-3.573-8.574-9.609v17.717h17.847V3.077Z"/>
 </symbol>
 
-<symbol id="ringzer0" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><g transform="translate(0.000000,300.000000) scale(0.050000,-0.050000)"
+<symbol id="ringzer0" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><g transform="translate(0.000000,16.000000) scale(0.050000,-0.050000)"
 fill="#000000" stroke="none">
 <path d="M0 3000 l0 -3000 3000 0 3000 0 0 3000 0 3000 -3000 0 -3000 0 0
 -3000z m5100 1823 c305 -158 289 -66 296 -1738 7 -1978 96 -1845 -1236 -1845
