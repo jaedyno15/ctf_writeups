@@ -6,7 +6,7 @@ permalink: /rankings/
 
 Here are the competitions I have participated in this year including the team I competed with and the final ranking for each. 
 
-My main team Inodes is currently ranked 12th in Canada. 
+<!-- My main team Inodes is currently ranked 12th in Canada.  //add ranking back once we start competing again in september-->
 
 ---
 
