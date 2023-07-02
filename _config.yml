@@ -14,7 +14,7 @@
 title: Jaedyn Okabe
 email: jaedyn.okabe@gmail.com
 
-tagline: A blog for CTF writeups
+tagline: A blog for CTF write-ups
 
 
 # info for footer
@@ -24,8 +24,8 @@ author:
 
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Hi I'm a undergraduate student at Queen's University pursuing a degree in Computing
-  with a focus in security. This site holds writeups, my resume, CTF stats, and what I 
+  Hi, I am an undergraduate student at Queen's University pursuing a degree in Computing
+  with a focus on security. This site holds write-ups, my resume, CTF stats, and what I 
   am currently working on in cybersecurity.
 
 
